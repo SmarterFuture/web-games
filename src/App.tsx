@@ -60,7 +60,7 @@ export default function Frame() {
     return (
         <>
             <Slider min={3} max={10} onChange={handleChange}/>
-            <Game side={size} />
+            <Game key={size} side={size} />
         </>
     )
 }
