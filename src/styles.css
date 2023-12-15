@@ -1,0 +1,16 @@
+
+
+.square {
+    background-color: #000000;
+    border: solid #FFFFFF;
+    float: left;
+    height: 2em;
+    width: 2em;
+    text-align: center;
+}
+
+.board-row:after {
+  clear: both;
+  content: '';
+  display: table;
+}
