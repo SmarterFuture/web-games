@@ -3,14 +3,53 @@
 .square {
     background-color: #000000;
     border: solid #FFFFFF;
-    float: left;
     height: 2em;
     width: 2em;
     text-align: center;
+    margin: -1px -1px 0px 0px;
+    float: left;
 }
 
-.board-row:after {
-  clear: both;
-  content: '';
-  display: table;
+.board-line {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.box {
+    min-width: 20em;
+    margin: 10em;
+    padding: 1em;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    border: solid thin red
+}
+
+.sliderBox {
+    width: 50%;
+    min-width: 20em;
+}
+
+.buttonBox {
+    margin: .5em
+}
+
+.historyList {
+    width: 50%;
+    list-style: none;
+}
+
+.historyDiv {
+    border: solid thin red;
+    width: 50%
+}
+
+.tictactoeBox {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    justify-content: end;
+    border: solid thin yellow
 }
