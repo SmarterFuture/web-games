@@ -1,42 +1,39 @@
-import React, {MouseEventHandler, useState} from "react";
+import React, { useState } from "react";
 import Slider from "@mui/material/Slider";
-import { validateSudoku } from "./utils";
+import { validateTicTacToe } from "./utils";
+import { ITile, Player, History } from "./constants";
 
-interface Button {
-    value: string,
-    onClick: MouseEventHandler<HTMLButtonElement>
-}
 
 interface Size {
     side: number
 }
 
-
-export function Square({value, onClick}: Button) {
+function Tile({ value, onClick }: ITile) {
     return (
-        <button className="square" onClick={onClick}>
+        <button className="square" onClick={ onClick }>
             { value }
         </button>
     );
 }
 
-export function Game({side}: Size) {
+function Game({ side }: Size) {
     
     const [xNext, setXNext] = useState<boolean>(true);
-    const [tiles, setTiles] = useState<Array<string>>(Array(side ** 2));
-    const [cbs, setCbs] = useState<Array<Array<string>>>(Array());
+    const [tiles, setTiles] = useState<Array<Player | undefined>>(Array(side ** 2));
+    const [history, setHistory] = useState<Array<History>>(Array());
+    const [wasMod, setWasMod] = useState<number>(-1);
 
     function jumpTo(move: number) {
-        const nextCbs = cbs.slice(0, move + 1);
-        const newState = nextCbs[move];
-        setTiles(newState);
+        const newState = history[move];
+        setTiles(newState.state);
         setXNext(!!(move % 2));
-        setCbs(nextCbs);
+        setWasMod(move);
     }
 
     function playerTurn( index: number ) {
-        const nextState = tiles.slice();
-        const symbol = xNext ? "X" : "O";
+        const nextState: Array<Player | undefined> = tiles.slice();
+        const symbol: Player = xNext ? Player.X : Player.O;
+
         if (tiles[index] !== undefined) {
             return;
         }
@@ -44,13 +41,27 @@ export function Game({side}: Size) {
         setTiles(nextState);
         setXNext(!xNext);
         
-        const nextCbs = cbs.slice();
-        nextCbs.push(nextState);
-        setCbs(nextCbs);
+        let nextHistory: Array<History> = history.slice();
 
+        if ( wasMod !== -1 ) {
+            nextHistory = history.slice(0, wasMod + 1);
+            setWasMod(-1);
+        }
 
-        const out = validateSudoku(nextState, side, Math.max(3, side - 1));
-        console.log(out, symbol);
+        const out = validateTicTacToe(nextState, side, Math.max(3, side - 1));
+
+        const historyLog: History = {
+            state: nextState,
+            player: symbol,
+            pos: {
+                x: index % side,
+                y: index / side | 0
+            },
+            end: out
+        }
+
+        nextHistory.push(historyLog);
+        setHistory(nextHistory);
     }
 
     let rows: Array<React.JSX.Element> = [];
@@ -59,18 +70,25 @@ export function Game({side}: Size) {
         for (let x = 0; x < side; x++) {
             const pos = y * side + x
             cols.push(
-                <Square key={x} value={tiles[pos]} onClick={() => playerTurn(pos)}/>
+                <Tile key={x} value={ tiles[pos] || "" } onClick={() => playerTurn(pos)}/>
             );
         }
         rows.push(<div key={y} className="board-line">{cols}</div>);
     }
     
-    let cbbs: Array<React.JSX.Element> = [];
-    cbs.forEach((_, i) => {
-        cbbs.push(
+    let historyButtons: Array<React.JSX.Element> = [];
+    history.forEach((e, i) => {
+        let message: string;
+        if ( e.end ) {
+            message = `${ e.player } won`
+        } else {
+            message = `${ i + 1 }. ${ e.player }${ "abcdefghij"[e.pos.x] }${ e.pos.y + 1 }`
+        }
+
+        historyButtons.push(
             <li key={i}>
                 <button onClick={() => jumpTo(i)}>
-                { !(i % 2) ? "X" : "0" }, move #{i+1} 
+                { message }
                 </button>
             </li>
         ); 
@@ -83,7 +101,7 @@ export function Game({side}: Size) {
             </div>
             <div className="historyDiv">
                 <ul className="historyList">
-                    {cbbs}
+                    {historyButtons}
                 </ul>
             </div>
         </div>
