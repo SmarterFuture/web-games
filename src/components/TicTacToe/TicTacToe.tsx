@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Slider from "@mui/material/Slider";
 import { validateTicTacToe } from "./utils";
-import { ITile, Player, History } from "./constants";
+import { ITile, Player, History } from "../../shared/constants";
 import InputLabel from "@mui/material/InputLabel";
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from "@mui/material/MenuItem";
