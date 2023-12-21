@@ -24,7 +24,6 @@
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    border: solid thin red
 }
 
 .sliderBox {
@@ -32,24 +31,13 @@
     min-width: 20em;
 }
 
-.buttonBox {
-    margin: .5em
-}
-
 .historyList {
     width: 10em;
+    height: 3em;
     padding: .5em;
-    float: center;
 }
 
 .historyDiv {
     margin-bottom: .5em;
 }
 
-.tictactoeBox {
-    display: flex;
-    flex: 1;
-    width: 100%;
-    justify-content: end;
-    border: solid thin yellow
-}

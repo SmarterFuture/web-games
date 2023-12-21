@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import Slider from "@mui/material/Slider";
 import { validateTicTacToe } from "./utils";
 import { ITile, Player, History } from "./constants";
+import InputLabel from "@mui/material/InputLabel";
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Button from "@mui/material/Button";
 
 
 interface Size {
@@ -16,6 +21,14 @@ function Tile({ value, onClick }: ITile) {
     );
 }
 
+const MenuProps = {
+    PaperProps: {
+        style: { 
+        maxHeight: "10em"
+        }
+    }
+}
+
 function Game({ side }: Size) {
     
     const [xNext, setXNext] = useState<boolean>(true);
@@ -24,7 +37,7 @@ function Game({ side }: Size) {
     const [selected, setSelected] = useState<number>(0);
     const [lock, setLock] = useState<boolean>(false);
 
-    function jumpTo(event: React.ChangeEvent<HTMLSelectElement>) {
+    function jumpTo(event: SelectChangeEvent) {
         const move: number  = +event.target.value;
         const newState = history[move];
         setTiles(newState.state);
@@ -33,8 +46,6 @@ function Game({ side }: Size) {
         if ( move + 1 !== history.length ) {
             setLock(false)
         }
-        event.target.size = 1;
-        event.target.blur();
     }
 
     function playerTurn( index: number ) {
@@ -98,24 +109,28 @@ function Game({ side }: Size) {
         }
 
         historyButtons.push(
-            <option className="historyLog" key={i} value={i}>
+            <MenuItem className="historyLog" key={i} value={i}>
                 { message }
-            </option>
+            </MenuItem>
         );
     })
 
     return (
         <>
-            <div className="historyDiv">
-                <select
-                    className="historyList"
-                    value={ selected }
-                    onChange={ jumpTo }
-                    onFocus={ ( event ) => event.target.size = Math.min(10, history.length) }
-                    onBlur ={ ( event ) => event.target.size = 1}
-                >
-                    {historyButtons}
-                </select>
+            <div className="historyList">
+                <FormControl>
+                    <InputLabel id="history-in">History</InputLabel>
+                    <Select
+                        className="historyList"
+                        labelId="history-in"
+                        label="History"
+                        value={ !!historyButtons.length ? selected.toString() : '' }
+                        onChange={ jumpTo }
+                        MenuProps={ MenuProps }
+                    >
+                        { historyButtons }
+                    </Select>
+                </FormControl>
             </div>
             <div>
                 {rows}
@@ -139,11 +154,11 @@ export default function TicTacToe() {
     return (
         <div className="box">
             <div className="sliderBox"> 
-                <Slider min={3} max={10} onChange={handleChange}/>
+                <Slider min={3} max={10} onChange={handleChange} valueLabelDisplay="auto" />
             </div>
-            <button className="buttonBox" onClick={() => handleReset()}>
+            <Button variant="contained" className="buttonBox" onClick={() => handleReset()}>
                 Reset
-            </button>
+            </Button>
             <Game key={+key} side={size} />
         </div>
     )
