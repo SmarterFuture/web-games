@@ -21,17 +21,20 @@ function Game({ side }: Size) {
     const [xNext, setXNext] = useState<boolean>(true);
     const [tiles, setTiles] = useState<Array<Player | undefined>>(Array(side ** 2));
     const [history, setHistory] = useState<Array<History>>(Array());
-    const [wasMod, setWasMod] = useState<number>(-1);
+    const [selected, setSelected] = useState<number>(0);
     const [lock, setLock] = useState<boolean>(false);
 
-    function jumpTo(move: number) {
+    function jumpTo(event: React.ChangeEvent<HTMLSelectElement>) {
+        const move: number  = +event.target.value;
         const newState = history[move];
         setTiles(newState.state);
         setXNext(!!(move % 2));
-        setWasMod(move);
+        setSelected(move);
         if ( move + 1 !== history.length ) {
             setLock(false)
         }
+        event.target.size = 1;
+        event.target.blur();
     }
 
     function playerTurn( index: number ) {
@@ -50,10 +53,9 @@ function Game({ side }: Size) {
         setXNext(!xNext);
         
         let nextHistory: Array<History> = history.slice();
-
-        if ( wasMod !== -1 ) {
-            nextHistory = history.slice(0, wasMod + 1);
-            setWasMod(-1);
+        
+        if ( selected !== history.length ) {
+            nextHistory = history.slice(0, selected + 1);
         }
 
         const out = validateTicTacToe(nextState, side, Math.max(3, side - 1));
@@ -71,6 +73,7 @@ function Game({ side }: Size) {
 
         nextHistory.push(historyLog);
         setHistory(nextHistory);
+        setSelected( nextHistory.length - 1);
     }
 
     let rows: Array<React.JSX.Element> = [];
@@ -95,25 +98,29 @@ function Game({ side }: Size) {
         }
 
         historyButtons.push(
-            <li key={i}>
-                <button onClick={() => jumpTo(i)}>
+            <option className="historyLog" key={i} value={i}>
                 { message }
-                </button>
-            </li>
-        ); 
+            </option>
+        );
     })
 
     return (
-        <div className="tictactoeBox">
+        <>
+            <div className="historyDiv">
+                <select
+                    className="historyList"
+                    value={ selected }
+                    onChange={ jumpTo }
+                    onFocus={ ( event ) => event.target.size = Math.min(10, history.length) }
+                    onBlur ={ ( event ) => event.target.size = 1}
+                >
+                    {historyButtons}
+                </select>
+            </div>
             <div>
                 {rows}
             </div>
-            <div className="historyDiv">
-                <ul className="historyList">
-                    {historyButtons}
-                </ul>
-            </div>
-        </div>
+        </>
     );
 }
 

@@ -37,12 +37,13 @@
 }
 
 .historyList {
-    list-style: none;
+    width: 10em;
+    padding: .5em;
+    float: center;
 }
 
 .historyDiv {
-    border: solid thin red;
-    width: 50%
+    margin-bottom: .5em;
 }
 
 .tictactoeBox {
