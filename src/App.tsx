@@ -22,15 +22,23 @@ function Game({ side }: Size) {
     const [tiles, setTiles] = useState<Array<Player | undefined>>(Array(side ** 2));
     const [history, setHistory] = useState<Array<History>>(Array());
     const [wasMod, setWasMod] = useState<number>(-1);
+    const [lock, setLock] = useState<boolean>(false);
 
     function jumpTo(move: number) {
         const newState = history[move];
         setTiles(newState.state);
         setXNext(!!(move % 2));
         setWasMod(move);
+        if ( move + 1 !== history.length ) {
+            setLock(false)
+        }
     }
 
     function playerTurn( index: number ) {
+        if ( lock ) {
+            return;
+        }
+
         const nextState: Array<Player | undefined> = tiles.slice();
         const symbol: Player = xNext ? Player.X : Player.O;
 
@@ -49,6 +57,7 @@ function Game({ side }: Size) {
         }
 
         const out = validateTicTacToe(nextState, side, Math.max(3, side - 1));
+        setLock(out);
 
         const historyLog: History = {
             state: nextState,
