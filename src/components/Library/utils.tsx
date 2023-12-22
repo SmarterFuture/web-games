@@ -2,16 +2,13 @@ import { styled } from '@mui/material/styles';
 import { ButtonBase } from "@mui/material";
 
 
-export const ImageButton = styled(ButtonBase)(({ theme }) => ({
+export const ImageButton = styled(ButtonBase)(() => ({
   position: 'relative',
   height: "100%",
   '&:hover, &.Mui-focusVisible': {
     zIndex: 1,
     '& .MuiImageBackdrop-root': {
       opacity: 0.15,
-    },
-    '& .MuiImageMarked-root': {
-      opacity: 0,
     },
   },
 }));
