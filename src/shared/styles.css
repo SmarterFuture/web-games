@@ -34,11 +34,7 @@
 .historyList {
     width: 10em;
     height: 3em;
-    padding: .5em;
-}
-
-.historyDiv {
-    margin-bottom: .5em;
+    padding: 1em
 }
 
 .center_mid {
@@ -47,5 +43,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.board {
+    margin-top: 1em
 }
 

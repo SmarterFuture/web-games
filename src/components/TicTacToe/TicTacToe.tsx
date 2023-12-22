@@ -117,8 +117,11 @@ function Game({ side }: Size) {
 
     return (
         <>
+            <div className="board">
+                {rows}
+            </div>
             <div className="historyList">
-                <FormControl>
+                <FormControl id="history-select">
                     <InputLabel id="history-in">History</InputLabel>
                     <Select
                         className="historyList"
@@ -131,9 +134,6 @@ function Game({ side }: Size) {
                         { historyButtons }
                     </Select>
                 </FormControl>
-            </div>
-            <div>
-                {rows}
             </div>
         </>
     );
