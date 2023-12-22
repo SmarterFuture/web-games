@@ -4,7 +4,7 @@ import "./shared/styles.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import TicTacToe from "./components/TicTacToe/TicTacToe";
-import { NoPage, Leaderboard, Games, NavBar, Profil } from "./components";
+import { NoPage, Leaderboard, Library, NavBar, Profil } from "./components";
 
 
 const root = createRoot(document.getElementById("root") as HTMLElement);
@@ -13,10 +13,10 @@ root.render(
         <Router>
             <NavBar />
             <Routes>
-                <Route index element={ <Games/> } />
+                <Route index element={ <Library/> } />
                 <Route path="leaderboard" element={ <Leaderboard/> }/>
                 <Route path="games">
-                    <Route path="" element={ <Games/> } />
+                    <Route path="" element={ <Library/> } />
                     <Route path="tictactoe" element={ <TicTacToe/> } />
                 </Route>
                 <Route path="user">
