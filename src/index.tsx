@@ -19,6 +19,10 @@ root.render(
                     <Route path="" element={ <Games/> } />
                     <Route path="tictactoe" element={ <TicTacToe/> } />
                 </Route>
+                <Route path="user">
+                    <Route path="" element={ <p>tbd</p> } />
+                    <Route path="myaccount" element={ <p>tbd</p> } />
+                </Route>
                 <Route path="*" element={ <NoPage/> } />
             </Routes>
         </Router>
