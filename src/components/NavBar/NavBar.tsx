@@ -13,7 +13,7 @@ function NavBar() {
                 <Toolbar disableGutters>
 
                     {/* big screen layout */}
-                    <Typography variant="h6" noWrap sx={ LOGO_STYLE_BIG }>
+                    <Typography variant="h5" noWrap sx={ LOGO_STYLE_BIG }>
                         WEB GAMES
                     </Typography>
                     

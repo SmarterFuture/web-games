@@ -1,5 +1,9 @@
-import { MouseEvent } from "react";
 
+
+interface IPage {
+    name: string,
+    link: string,
+}
 
 export const PAGES: Array<IPage> = [
     { name: "Home", link: "" },
@@ -36,10 +40,4 @@ export const MENU_STYLE_SMALL = {
     flexGrow: 1,
     display: { xs: "flex", md: "none" },
 };
-
-export interface IPage {
-    name: string,
-    link: string,
-}
-
 

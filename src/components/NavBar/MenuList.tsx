@@ -60,7 +60,7 @@ export function BigMenu() {
                 <Button
                     key={page.name}
                     onClick={ () => navigate(page.link) }
-                    sx={{ my: 2, color: 'white', display: 'block' }}
+                    sx={{ my: 2, mx: 1, color: 'white', display: 'block' }}
                 >
                     <Typography text-align="center">
                         { page.name }
