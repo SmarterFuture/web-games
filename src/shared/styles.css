@@ -1,24 +1,32 @@
 
 
-.square {
-    background-color: #000000;
-    border: solid #FFFFFF;
-    height: 2em;
-    width: 2em;
-    text-align: center;
-    margin: -1px -1px 0px 0px;
-    float: left;
+.board {
+    margin-top: 1em;
+    min-width: 20em;
+    max-width: 50vh;
+    width: 50%;
+    aspect-ratio: 1 / 1;
 }
 
-.board-line {
-    clear: both;
-    content: "";
-    display: table;
+.board div {
+    display: flex;
+}
+
+.board button {
+    background-color: #FFF;
+    border: solid #000;
+    text-align: center;
+    margin: -1px -1px 0px 0px;
+    flex: auto;
+    flex-basis: 100%;
+    aspect-ratio: 1 / 1;
+    height: 100%;
+    font-size: inherit;
 }
 
 .box {
     min-width: 20em;
-    margin: 10em;
+    margin-top: 10vh;
     padding: 1em;
     display: flex;
     flex-flow: column nowrap;
@@ -43,10 +51,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.board {
-    margin-top: 1em
 }
 
 .library {

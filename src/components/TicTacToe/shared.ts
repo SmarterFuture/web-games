@@ -5,6 +5,10 @@ export enum Player {
     O = "O"
 }
 
+export interface Size {
+    side: number
+}
+
 export interface ITile {
     value: string,
     onClick: MouseEventHandler<HTMLButtonElement>
@@ -41,6 +45,14 @@ export class Streak {
             return true;
         }
         return false;
+    }
+}
+
+export const MenuProps = {
+    PaperProps: {
+        style: { 
+        maxHeight: "10em"
+        }
     }
 }
 
