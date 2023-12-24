@@ -1,4 +1,3 @@
-import "../../shared/styles.css";
 import { ImageButton, ImageSrc, ImageCenter, ImageBackdrop } from "./utils";
 import { GAMES, IGameBook } from "./shared";
 import { useNavigate } from "react-router-dom";

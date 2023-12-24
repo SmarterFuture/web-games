@@ -2,8 +2,12 @@
 
 function Leaderboard() {
     return (
-        <p>this is Leaderboard page</p>  
+        <div className="center_mid">
+            <div>
+                This is leaderboard page
+            </div>
+        </div>
     );
-}
+};
 
 export default Leaderboard;

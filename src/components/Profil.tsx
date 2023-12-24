@@ -1,4 +1,4 @@
-import "../shared/styles.css";
+
 
 function Profil() {
     return (

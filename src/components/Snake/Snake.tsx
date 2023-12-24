@@ -1,13 +1,13 @@
+import { Brain } from "./utils";
 
-
-function Profil() {
+function Snake() {
     return (
         <div className="center_mid">
             <div>
-                This page does not exists
+                This is snake page
             </div>
         </div>
     );
 };
 
-export default Profil;
+export default Snake;

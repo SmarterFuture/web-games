@@ -3,8 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./shared/styles.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import TicTacToe from "./components/TicTacToe/TicTacToe";
-import { NoPage, Leaderboard, Library, NavBar, Profil } from "./components";
+import { NoPage, Leaderboard, Library, NavBar, Profil, Snake, TicTacToe } from "./components";
 
 
 const root = createRoot(document.getElementById("root") as HTMLElement);
@@ -18,6 +17,7 @@ root.render(
                 <Route path="games">
                     <Route path="" element={ <Library/> } />
                     <Route path="tictactoe" element={ <TicTacToe/> } />
+                    <Route path="snake" element={ <Snake/> } />
                 </Route>
                 <Route path="user">
                     <Route path="" element={ <Profil/> } />

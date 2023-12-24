@@ -1,4 +1,5 @@
 
+
 enum SnakeAssets {
     Head = "#FFFFFF",
     Tail = "#FFFFFF",
@@ -11,7 +12,7 @@ interface IDir {
     dy: number
 }
 
-const Dir = {
+export const Dir = {
     Up: { dx: 0, dy: 1 } as IDir,
     Down: { dx: 0, dy: -1 } as IDir,
     Left: { dx: -1, dy: 0 } as IDir,
@@ -24,12 +25,12 @@ interface Tile {
     color: SnakeAssets
 };
 
-class Snake {
+ export class Brain {
     body: Array<Tile>;
     height: number;
     width: number;
     score: number;
-    dir: IDir;
+    dir = { dx: 1, dy: 0 } as IDir;
     constructor (height: number, width: number) {
         this.height = height;
         this.width = width;
@@ -41,8 +42,8 @@ class Snake {
     move() {
         const last_tail = this.body[this.body.length - 1];
         this.body.forEach( (tile) => {
-            tile.x += this.dir[0];
-            tile.y += this.dir[1]
+            tile.x += this.dir.dx;
+            tile.y += this.dir.dy;
         })
         this.body.push(last_tail);
         this.score += 1;
