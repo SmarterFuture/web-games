@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { Slider, Button } from "@mui/material";
+import { Slider, Button, Dialog, DialogTitle, DialogActions } from "@mui/material";
 import { Scene } from "./Scene";
+import {Player} from "./shared";
 
 
 function TicTacToe() {
     const [size, setSize] = useState<number>(3);
     const [key, setKey] = useState<boolean>(false);
+    const [dialog, setDialog] = useState<Player | null>(null);
 
     function handleChange(_: Event, newValue: number | number[]) {
         setSize(newValue as number);
@@ -13,6 +15,12 @@ function TicTacToe() {
     }
     function handleReset() {
         setKey(!key);
+    }
+    function openDialog(winner: Player) {
+        setDialog(winner);
+    }
+    function closeDialog() {
+        setDialog(null)
     }
     
     return (
@@ -23,7 +31,19 @@ function TicTacToe() {
             <Button variant="contained" className="buttonBox" onClick={() => handleReset()}>
                 Reset
             </Button>
-            <Scene key={+key} side={size} />
+            <Scene key={+key} side={size} endHandler={ openDialog }/>
+            <Dialog
+                open={ Boolean(dialog) }
+                onClose={ closeDialog }
+            >
+                <DialogTitle>
+                    Congratulations, { dialog } won!
+                </DialogTitle>
+                <DialogActions>
+                    <Button onClick={ closeDialog }> Close </Button>
+                    <Button onClick={() => { closeDialog(); handleReset() }}> New Game </Button>
+                </DialogActions>
+            </Dialog>
         </div>
     )
 }

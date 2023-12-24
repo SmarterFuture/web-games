@@ -6,7 +6,8 @@ export enum Player {
 }
 
 export interface Size {
-    side: number
+    side: number,
+    endHandler: (winner: Player) => void
 }
 
 export interface ITile {
