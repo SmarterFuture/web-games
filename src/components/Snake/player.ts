@@ -1,11 +1,4 @@
-
-
-enum SnakeAssets {
-    Head = "#FFFFFF",
-    Tail = "#FFFFFF",
-    Empty = "#000000",
-    Food = "#FF0000"
-}
+import {Board} from "./board";
 
 interface IDir {
     dx: number,
@@ -19,34 +12,35 @@ export const Dir = {
     Right: { dx: 1, dy: 0 } as IDir,
 }
 
-interface Tile {
+interface SnakeSegment {
     x: number,
     y: number,
-    color: SnakeAssets
+    dir: IDir
 };
 
- export class Brain {
-    body: Array<Tile>;
-    height: number;
-    width: number;
+ export class Player {
+    body: Array<SnakeSegment>;
+    board: Board
     score: number;
     dir = { dx: 1, dy: 0 } as IDir;
-    constructor (height: number, width: number) {
-        this.height = height;
-        this.width = width;
+    constructor (board: Board) {
+        this.board = board;
         this.score = 0;
-        const head: Tile = { x: width / 2, y: height / 2, color: SnakeAssets.Head };
-        const tail: Tile = { x: width / 2 + 1, y: height / 2, color: SnakeAssets.Tail };
+        const head: SnakeSegment = { ...this.board.center(), dir: this.dir };
+        const tail: SnakeSegment = { x: head.x, y: head.y + 1, dir: this.dir };
         this.body = [head, tail]
     }
     move() {
-        const last_tail = this.body[this.body.length - 1];
-        this.body.forEach( (tile) => {
-            tile.x += this.dir.dx;
-            tile.y += this.dir.dy;
-        })
-        this.body.push(last_tail);
+        const newHead: SnakeSegment = {
+            x: this.body[0].x + this.dir.dx,
+            y: this.body[0].y + this.dir.dy,
+            dir: this.dir
+        }
+        this.body.unshift(newHead);
         this.score += 1;
+
+        // TODO: implement growing, correctly, from this.board
+        // TODO: implement writing occupancy to board
     }
     change_dir(dir: IDir) {
         if ( ( dir.dx === this.dir.dx && dir.dx === 0 ) ||
