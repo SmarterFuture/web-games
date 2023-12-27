@@ -1,46 +1,37 @@
-import {Board} from "./board";
+import { Board } from "./board";
+import { IDir, Dir, SnakeSegment } from "./shared";
 
-interface IDir {
-    dx: number,
-    dy: number
-}
-
-export const Dir = {
-    Up: { dx: 0, dy: 1 } as IDir,
-    Down: { dx: 0, dy: -1 } as IDir,
-    Left: { dx: -1, dy: 0 } as IDir,
-    Right: { dx: 1, dy: 0 } as IDir,
-}
-
-interface SnakeSegment {
-    x: number,
-    y: number,
-    dir: IDir
-};
 
  export class Player {
     body: Array<SnakeSegment>;
     board: Board
     score: number;
-    dir = { dx: 1, dy: 0 } as IDir;
+    dir = Dir.Right;
     constructor (board: Board) {
         this.board = board;
         this.score = 0;
-        const head: SnakeSegment = { ...this.board.center(), dir: this.dir };
-        const tail: SnakeSegment = { x: head.x, y: head.y + 1, dir: this.dir };
+
+        const head: SnakeSegment = { ...this.board.center(), dir: this.dir._state };
+        const tail: SnakeSegment = { x: head.x, y: head.y + 1, dir: this.dir._state };
         this.body = [head, tail]
+
+        this.board.nextFood();        
     }
     move() {
         const newHead: SnakeSegment = {
             x: this.body[0].x + this.dir.dx,
             y: this.body[0].y + this.dir.dy,
-            dir: this.dir
-        }
+            dir: this.dir._state
+        };
         this.body.unshift(newHead);
-        this.score += 1;
-
-        // TODO: implement growing, correctly, from this.board
-        // TODO: implement writing occupancy to board
+        
+        if ( newHead.x === this.board.food.x &&
+             newHead.y === this.board.food.y ) {
+            this.score += 1;
+        } else {
+            this.tailoff()
+        }
+        this.board.changeState(newHead.x, newHead.y, true);
     }
     change_dir(dir: IDir) {
         if ( ( dir.dx === this.dir.dx && dir.dx === 0 ) ||
@@ -48,10 +39,11 @@ interface SnakeSegment {
             return
         }
         this.dir = dir;
+        this.body[0].dir = dir._state;
     }
     tailoff() {
-        this.score -= 1;
-        this.body.pop()
+        const { x, y }  = this.body.pop() || { x: 0, y: 0 };
+        this.board.changeState(x, y, false);
     }
     has_died() {
         const head = this.body[0];
@@ -61,7 +53,7 @@ interface SnakeSegment {
                 return true;
             }
         }
-        if ( head.x < 0 || head.x > this.width || head.y < 0 || head.y > this.height ) {
+        if ( head.x < 0 || head.x > this.board.width || head.y < 0 || head.y > this.board.height ) {
             return true
         }
         return false
