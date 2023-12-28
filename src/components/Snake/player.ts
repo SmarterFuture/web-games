@@ -5,11 +5,10 @@ import { IDir, Dir, SnakeSegment } from "./shared";
  export class Player {
     body: Array<SnakeSegment>;
     board: Board
-    score: number;
-    dir = Dir.Right;
+    score: number = 2;
+    dir: IDir = Dir.Right;
     constructor (board: Board) {
         this.board = board;
-        this.score = 0;
 
         const head: SnakeSegment = { ...this.board.center(), dir: this.dir._state };
         const tail: SnakeSegment = { x: head.x, y: head.y + 1, dir: this.dir._state };

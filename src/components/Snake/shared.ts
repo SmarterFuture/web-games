@@ -1,3 +1,4 @@
+import { styled } from '@mui/material/styles';
 import assets from "../../shared/assets.json";
 const snakeAssets = assets.snake;
 
@@ -54,3 +55,15 @@ export const Dir = {
     Down: { dx: 0, dy: 1, _state: 2 } as IDir,
     Right: { dx: 1, dy: 0, _state: 3 } as IDir,
 }
+
+export const Canvas = styled('canvas')(
+    ({ theme }) => ({
+        marginTop: "1em",
+        minWidth: "20em",
+        maxWidth: "60vh",
+        width: "60%",
+        aspectRatio: "1 / 1",
+        borderStyle: "solid",
+        borderWidth: 5,
+        borderColor: theme.palette.secondary.dark
+}));

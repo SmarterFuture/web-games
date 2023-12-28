@@ -31,7 +31,6 @@ export class Board {
             occupied = this.board[randIdx];
         }
         this.food = this.toPos(randIdx);
-        console.log(this.food, randIdx);
     }
     toPos(idx: number): IPos {
         return { x: idx % this.width, y: idx / this.width | 0 }

@@ -31,7 +31,7 @@ function Library() {
     return (
         <div className="library">
             { GAMES.map((book) => (
-                <div className="book" key={ book.name }>
+                <div key={ book.name }>
                     <Tile link={book.link} name={book.name} pic={book.pic} />
                 </div>
             ))}

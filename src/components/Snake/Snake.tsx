@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { Player } from "./player";
 import { Board } from "./board";
 import { renderer } from "./renderer";
-import { Dir, TILE_SIZE } from "./shared";
+import { Canvas, Dir, TILE_SIZE } from "./shared";
+import {Typography} from "@mui/material";
 
 
 
@@ -13,35 +14,50 @@ function Snake() {
     const [dead, kill] = useState<boolean>(false);
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
+    const [paused, setPaused] = useState<boolean>(true);
+    const [score, setScore] = useState<number>(0);
 
     useEffect(() => {
         if ( canvasRef.current === null ) {
             throw new Error("Canvas not defined");
         }
         
-        // TODO: change canvas accordingly
-        canvasRef.current.width = TILE_SIZE * 10.5;
-        canvasRef.current.height = TILE_SIZE * 10.5;
+        canvasRef.current.width = canvasRef.current.offsetWidth;
+        canvasRef.current.height = canvasRef.current.offsetHeight;
+
+        const scale = canvasRef.current.height / ( 21 * TILE_SIZE );
 
         ctxRef.current = canvasRef.current.getContext("2d");
         
         if ( ctxRef.current ) {
 
-            // TODO: somewhat implement scale to be dependent (and good looking) on screen screen size
-            ctxRef.current.scale(.5, .5);
+            ctxRef.current.scale(scale, scale);
             board.current = new Board(20, 20);
             player.current = new Player(board.current);
             const currentPlayer = player.current;
 
             window.onkeydown = (e) => {
-                if ( e.key === "w" || e.key === "ArrowUp") {
-                    currentPlayer.change_dir(Dir.Up);
-                } else if ( e.key === "s" || e.key === "ArrowDown" ) {
-                    currentPlayer.change_dir(Dir.Down);
-                } else if ( e.key === "a" || e.key === "ArrowLeft" ) {
-                    currentPlayer.change_dir(Dir.Left);
-                } else if ( e.key === "d" || e.key === "ArrowRight" ) {
-                    currentPlayer.change_dir(Dir.Right);
+                switch ( e.key ) {
+                    case "w":
+                    case "ArrowUp":
+                        currentPlayer.change_dir(Dir.Up);
+                        break;
+                    case "s":
+                    case "ArrowDown":
+                        currentPlayer.change_dir(Dir.Down);
+                        break;
+                    case "a":
+                    case "ArrowLeft":
+                        currentPlayer.change_dir(Dir.Left);
+                        break;
+                    case "d":
+                    case "ArrowRight":
+                        currentPlayer.change_dir(Dir.Right);
+                        break;
+                    case "p":
+                        setPaused(elm => !elm);
+                        break
+                    default:
                 }
             }
         }
@@ -55,21 +71,23 @@ function Snake() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            if ( player.current && ctxRef.current && !dead) {
+            if ( player.current && ctxRef.current && !paused && !dead) {
                 const ctx = ctxRef.current;
+                setScore(player.current.score);
                 kill(player.current.move());
                 renderer(ctx, player.current);
             }
         }, 200);
 
         return () => clearInterval(interval);
-    }, [!dead]);
+    }, [paused, dead]);
 
     return (
-        <div className="center_mid">
-            <div>
-                <canvas id="game-canvas" ref={canvasRef} style={{border: "solid thin red"}}></canvas>
-            </div>
+        <div className="box">
+            <Typography variant="h5">
+                Score: { score }
+            </Typography>
+            <Canvas id="game-canvas" ref={canvasRef}></Canvas>
         </div>
     );
 };
