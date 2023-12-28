@@ -30,10 +30,11 @@ export class Board {
             randIdx = this.getRandom(0, this.flaten())
             occupied = this.board[randIdx];
         }
-        this.food = this.toPos(randIdx)
+        this.food = this.toPos(randIdx);
+        console.log(this.food, randIdx);
     }
     toPos(idx: number): IPos {
-        return { x: idx / this.width | 0, y: idx % this.width }
+        return { x: idx % this.width, y: idx / this.width | 0 }
     }
     private getRandom(min: number, max: number) {
         return Math.floor(Math.random() * (max - min) + min);
