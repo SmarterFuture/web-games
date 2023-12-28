@@ -12,7 +12,7 @@ function Tile({ value, onClick }: ITile) {
     );
 }
 
-export function Scene({ side }: Size) {
+export function Scene({ side, endHandler }: Size) {
     
     const [xNext, setXNext] = useState<boolean>(true);
     const [tiles, setTiles] = useState<Array<Player | undefined>>(Array(side ** 2));
@@ -54,6 +54,9 @@ export function Scene({ side }: Size) {
 
         const out = validateTicTacToe(nextState, side, Math.max(3, side - 1));
         setLock(out);
+        if ( out ) {
+            endHandler(symbol);
+        }
 
         const historyLog: History = {
             state: nextState,
