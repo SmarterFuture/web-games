@@ -1,4 +1,5 @@
-import { styled } from '@mui/material/styles';
+import { SvgIconProps } from "@mui/material";
+import { Dispatch, ReactElement, SetStateAction } from "react";
 import assets from "../../shared/assets.json";
 const snakeAssets = assets.snake;
 
@@ -56,14 +57,17 @@ export const Dir = {
     Right: { dx: 1, dy: 0, _state: 3 } as IDir,
 }
 
-export const Canvas = styled('canvas')(
-    ({ theme }) => ({
-        marginTop: "1em",
-        minWidth: "20em",
-        maxWidth: "60vh",
-        width: "60%",
-        aspectRatio: "1 / 1",
-        borderStyle: "solid",
-        borderWidth: 5,
-        borderColor: theme.palette.secondary.dark
-}));
+export interface IArrowKey {
+    icon: ReactElement<SvgIconProps>,
+    value: IDir
+}
+
+export interface IControlsHandler {
+    pressHandler: (dir: IDir) => void,
+    pauseHandler: Dispatch<SetStateAction<boolean>>,
+    paused: boolean
+}
+
+export interface ISceenArgs {
+    speed: number
+}

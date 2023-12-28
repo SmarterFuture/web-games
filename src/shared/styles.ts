@@ -7,6 +7,10 @@ export const theme = createTheme({
         primary: purple,
         secondary: yellow,
         mode: "dark",
+        background: {
+            default: "#121212",
+            paper: "#292929"
+        }
     },
     components: {
         MuiAppBar: {

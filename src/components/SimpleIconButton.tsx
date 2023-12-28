@@ -1,12 +1,12 @@
 import { MouseEvent } from "react";
 import { IconButton } from "@mui/material"
 
- export interface IIButton {
+ export interface ISimpleIconButton {
     func: (event: MouseEvent<HTMLElement>) => void,
     inner: any
 }
 
-export function IButton({func, inner}: IIButton ) {
+export function SimpleIconButton ({func, inner}: ISimpleIconButton ) {
     return (
         <IconButton
             onClick={func}

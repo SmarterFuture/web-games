@@ -68,3 +68,9 @@
     align-items: center;
 }
 
+.mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
