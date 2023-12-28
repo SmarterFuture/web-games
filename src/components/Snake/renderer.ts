@@ -10,6 +10,9 @@ function bodyType(snakeIn: number, snakeOut: number): number {
 // player does contain all the import information about board and its location within
 export function renderer(ctx: CanvasRenderingContext2D, player: Player) {
     
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, player.board.width * TILE_SIZE, player.board.height * TILE_SIZE);
+    
     const food: IPos = player.board.food;
     ctx.drawImage(FOOD, food.x * TILE_SIZE, food.y * TILE_SIZE);
 
@@ -17,7 +20,8 @@ export function renderer(ctx: CanvasRenderingContext2D, player: Player) {
     
     for (let i = 0; i < body.length; i++) {
         const curr: number = body[i].dir;
-        const next: number = body[i + 1].dir || 1;
+        const nextSegment: SnakeSegment = body[i + 1];
+        const next: number = nextSegment ? nextSegment.dir : 1;
 
         let img: HTMLImageElement;
         if ( i === 0) {
