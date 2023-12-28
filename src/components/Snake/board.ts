@@ -23,6 +23,7 @@ export class Board {
         return this.width * this.height;
     }
     nextFood() {
+        this.changeState(this.food.x, this.food.y, false);
         let occupied = true;
         let randIdx = 0;
         while ( occupied ) {

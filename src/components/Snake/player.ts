@@ -31,6 +31,7 @@ import { IDir, Dir, SnakeSegment } from "./shared";
         if ( newHead.x === this.board.food.x &&
              newHead.y === this.board.food.y ) {
             this.score += 1;
+            this.board.nextFood(); 
         } else {
             this.tailoff();
         }
@@ -38,8 +39,8 @@ import { IDir, Dir, SnakeSegment } from "./shared";
         return false
     }
     change_dir(dir: IDir) {
-        if ( ( dir.dx === this.dir.dx && dir.dx === 0 ) ||
-            ( dir.dy === this.dir.dy && dir.dy === 0) ) {
+        const currDir = this.body[1].dir;
+        if ( currDir === dir._state || ( currDir + 2 ) % 4 === dir._state ) {
             return
         }
         this.dir = dir;
@@ -57,9 +58,9 @@ import { IDir, Dir, SnakeSegment } from "./shared";
             }
         }
         if ( head.x < 0 
-            || head.x > this.board.width - 1
+            || head.x > this.board.width
             || head.y < 0
-            || head.y > this.board.height - 1 ) {
+            || head.y > this.board.height ) {
             return true
         }
         return false

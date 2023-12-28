@@ -18,23 +18,30 @@ function Snake() {
         if ( canvasRef.current === null ) {
             throw new Error("Canvas not defined");
         }
-
-        canvasRef.current.width = TILE_SIZE * 20;
-        canvasRef.current.height = TILE_SIZE * 20;
+        
+        // TODO: change canvas accordingly
+        canvasRef.current.width = TILE_SIZE * 10.5;
+        canvasRef.current.height = TILE_SIZE * 10.5;
 
         ctxRef.current = canvasRef.current.getContext("2d");
-        console.log("canvas def");
         
         if ( ctxRef.current ) {
-            console.log("interval def")
+
+            // TODO: somewhat implement scale to be dependent (and good looking) on screen screen size
+            ctxRef.current.scale(.5, .5);
             board.current = new Board(20, 20);
             player.current = new Player(board.current);
             const currentPlayer = player.current;
 
             window.onkeydown = (e) => {
-                console.log(e.key);
-                if ( e.key === "w" ) {
+                if ( e.key === "w" || e.key === "ArrowUp") {
                     currentPlayer.change_dir(Dir.Up);
+                } else if ( e.key === "s" || e.key === "ArrowDown" ) {
+                    currentPlayer.change_dir(Dir.Down);
+                } else if ( e.key === "a" || e.key === "ArrowLeft" ) {
+                    currentPlayer.change_dir(Dir.Left);
+                } else if ( e.key === "d" || e.key === "ArrowRight" ) {
+                    currentPlayer.change_dir(Dir.Right);
                 }
             }
         }
@@ -53,7 +60,7 @@ function Snake() {
                 kill(player.current.move());
                 renderer(ctx, player.current);
             }
-        }, 100);
+        }, 200);
 
         return () => clearInterval(interval);
     }, [!dead]);
