@@ -4,7 +4,7 @@ import { styled } from '@mui/material/styles';
 
 export const Canvas = styled('canvas')(
     ({ theme }) => ({
-        marginTop: "1em",
+        marginTop: ".5em",
         minWidth: "20em",
         maxWidth: "60vh",
         width: "60%",

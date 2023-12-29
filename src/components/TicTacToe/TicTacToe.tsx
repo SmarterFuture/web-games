@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Slider, Button, Dialog, DialogTitle, DialogActions } from "@mui/material";
 import { Scene } from "./Scene";
-import {Player} from "./shared";
+import { Player } from "./shared";
 
 
 function TicTacToe() {
@@ -28,12 +28,12 @@ function TicTacToe() {
             <div className="sliderBox"> 
                 <Slider min={3} max={10} onChange={handleChange} valueLabelDisplay="auto" />
             </div>
-            <Button variant="contained" className="buttonBox" onClick={() => handleReset()}>
+            <Button variant="contained" onClick={ handleReset }>
                 Reset
             </Button>
             <Scene key={+key} side={size} endHandler={ openDialog }/>
             <Dialog
-                open={ Boolean(dialog) }
+                open={ !!dialog }
                 onClose={ closeDialog }
             >
                 <DialogTitle>
@@ -41,7 +41,7 @@ function TicTacToe() {
                 </DialogTitle>
                 <DialogActions>
                     <Button onClick={ closeDialog }> Close </Button>
-                    <Button onClick={() => { closeDialog(); handleReset() }}> New Game </Button>
+                    <Button onClick={() => { closeDialog(); handleReset(); }}> New Game </Button>
                 </DialogActions>
             </Dialog>
         </div>

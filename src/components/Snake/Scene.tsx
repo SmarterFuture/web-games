@@ -8,7 +8,7 @@ import { Canvas } from "./styles";
 import { Controls } from "./Controls";
 
 
-export function Scene({ speed }: ISceenArgs) {
+export function Scene({ speed, endHandler }: ISceenArgs) {
     const board = useRef<Board | null>(null);
     const player = useRef<Player | null>(null);
 
@@ -83,6 +83,8 @@ export function Scene({ speed }: ISceenArgs) {
                 setScore(player.current.score);
                 kill(player.current.move());
                 renderer(ctx, player.current);
+            } else if ( dead ) {
+                endHandler(score);
             }
         }, speed);
 
@@ -91,7 +93,7 @@ export function Scene({ speed }: ISceenArgs) {
 
     return (
         <>
-            <Typography variant="h5">
+            <Typography variant="h5" sx={{ mt: ".5em" }}>
                 Score: { score }
             </Typography>
             <Canvas id="game-canvas" ref={canvasRef}></Canvas>

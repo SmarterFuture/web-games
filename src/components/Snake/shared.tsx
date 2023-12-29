@@ -41,7 +41,8 @@ export interface IControlsHandler {
 }
 
 export interface ISceenArgs {
-    speed: number
+    speed: number,
+    endHandler: (score: number) => void
 }
 
 export const TILE_SIZE = 40;
