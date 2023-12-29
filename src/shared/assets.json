@@ -3,6 +3,10 @@
         "__comment": "all images are hosted on google photos to avoid image pre-loading",
         "__source": "https://photos.app.goo.gl/hTfLajd9mGdzwqEc6"
     },
+    "icons": {
+        "buymeacoffee": "https://ucac765dca7d2f7c5ceee0445e50.previews.dropboxusercontent.com/p/thumb/ACLDn7fGOR72oKmv_NMj3CdOWPYbbjT5YS2fF6DeVfwFtXvxldtquh5Gh2LIL1Wocbxw0XsqnRXKGS-FfVm32iq5gIwLOKQI94Vu-7IFKHz574ke0sFb8pCCWiakUOmT8715cLJLWSO7aokbHSbYGgkshbz_U-GRsvI3tuoNLqvDMkrTVZUSg-5Zp9mL6n9P0Enak0asrdxPkzcW0Eop1c3p5M8xDmuiy4NGyv_kf1a2CdSuOWEHBoAa2p8jdLYTu_IL1nWk1eCOSiAszHUE9wpNWAXE3Kjiy4m2SROpLdBr7wqYsTrpiGyyWQZ6lCOQNV7G2Hn516UTM2O5-hGLtPtZ/p.png",
+        "github": "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
+    },
     "snake": {
         "food": "https://lh3.googleusercontent.com/pw/ABLVV87DFNzew7YvYnzGYco0ROodctHzXC2Gl6y34wZgrwx_qQ0POVNn5j_lELnKieN2gUMGV0hsjWek6x42-SP11u2vsj0czs_AlYsVWnGXNVQ8ZZ0JLnb6TBmvrpa3cxQecphKOWhqGp1HuZ2sB0dH_R_I",
         "head": {

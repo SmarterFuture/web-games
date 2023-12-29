@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./shared/styles.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import { NoPage, Leaderboard, Library, NavBar, Profil, Snake, TicTacToe } from "./components";
+import { NoPage, Leaderboard, Library, NavBar, Profil, Snake, TicTacToe, Footer } from "./components";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "./shared/styles";
 import { CssBaseline } from "@mui/material";
@@ -30,6 +30,7 @@ root.render(
                     </Route>
                     <Route path="*" element={ <NoPage/> } />
                 </Routes>
+                <Footer />
             </Router>
         </ThemeProvider>
     </StrictMode>

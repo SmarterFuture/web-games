@@ -18,5 +18,13 @@ export const theme = createTheme({
                 enableColorOnDark: true
             }
         }
+    },
+    typography: {
+        subtitle1: {
+            fontSize: ".8em"
+        },
+        subtitle2: {
+            fontSize: ".7em"
+        }
     }
 });
