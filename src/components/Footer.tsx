@@ -1,10 +1,11 @@
 import { Box, Container, Grid, Typography, Link } from "@mui/material";
 import { styled } from '@mui/material/styles';
+import { SimpleIcon } from "../shared/styles"; 
 import asstes from "../shared/assets.json";
 const icons = asstes.icons;
 
 
-const FooterBox = styled(Box)(({ theme}) => ({
+const FooterBox = styled(Box)(({ theme }) => ({
     ...theme.typography.body1,
     marginTop: "10vh",
     paddingTop: "2em",
@@ -12,32 +13,38 @@ const FooterBox = styled(Box)(({ theme}) => ({
     background: theme.palette.background.paper
 }));
 
-
 function Footer() {
     return (
         <FooterBox component={"footer"}>
             <Container>
-                <Grid container maxWidth="xl" spacing={1} columns={2}>
-                    <Grid item xs={1}>
-                        <Typography variant="subtitle1">
+                <Grid
+                    container
+                    maxWidth="xl"
+                    spacing={1}
+                    columns={3}
+                    justifyContent={"space-between"}
+                    alignItems={"center"}
+                >
+                    <Grid item xs>
+                        <Typography variant="footer1">
                             If you spot any issues, feel free to open an issue on GitHub.
                         </Typography>
                     </Grid>
-                    <Grid item xs={1}>
+                    <Grid item xs={"auto"}>
                         <Typography align="right">
                             <Link href="https://github.com/SmarterFuture">
-                                <img className="icon" src= { icons.github } />
+                                <SimpleIcon src= { icons.github } />
                             </Link>
                             <Link href="https://www.buymeacoffee.com/smarterfuture">
-                                <img className="icon" src={ icons.buymeacoffee } />
+                                <SimpleIcon src={ icons.buymeacoffee } />
                             </Link>
                         </Typography>
                     </Grid>
-                    <Grid item xs={2}>
-                        <Typography variant="subtitle2" color="theme.secondary.dark" align="center">
+                    <Grid item xs={3} textAlign="center">
+                        <Typography variant="footer2">
                             { "Copyright © " }
                             <Link color="inherit" href="https://github.com/SmarterFuture/web-games">
-                                SmarterFuture GitHub
+                                SmarterFuture/web-games
                             </Link>
                             { " " }
                             { new Date().getFullYear() }
