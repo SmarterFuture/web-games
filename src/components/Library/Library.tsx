@@ -1,4 +1,4 @@
-import { ImageButton, ImageSrc, ImageCenter, ImageBackdrop } from "./utils";
+import { ImageButton, ImageSrc, ImageCenter, ImageBackdrop } from "./styles";
 import { GAMES, IGameBook } from "./shared";
 import { useNavigate } from "react-router-dom";
 import { Typography } from "@mui/material";
@@ -31,7 +31,7 @@ function Library() {
     return (
         <div className="library">
             { GAMES.map((book) => (
-                <div className="book" key={ book.name }>
+                <div key={ book.name }>
                     <Tile link={book.link} name={book.name} pic={book.pic} />
                 </div>
             ))}

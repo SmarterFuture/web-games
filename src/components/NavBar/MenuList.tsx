@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Toolbar, Box, Typography, Button, Drawer, List, ListItemButton, ListItem } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { MENU_STYLE_BIG, MENU_STYLE_SMALL, PAGES } from "./shared";
-import { IButton } from "./IconButton";
+import { SimpleIconButton } from "../SimpleIconButton";
 
 
 export function SmallMenu() {
@@ -20,7 +20,7 @@ export function SmallMenu() {
 
     return (
         <Box sx={ MENU_STYLE_SMALL }>
-            <IButton func={ openMenu } inner={ <MenuIcon />} />
+            <SimpleIconButton func={ openMenu } inner={ <MenuIcon /> } />
             <Drawer
                 anchor="left"
                 open={ Boolean(openElm) } 
