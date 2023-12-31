@@ -1,6 +1,6 @@
-import { Box, Container, Grid, Typography, Link } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import { styled } from '@mui/material/styles';
-import { SimpleIcon } from "../shared/styles"; 
+import { MyLink, MyIcon } from "./custom";
 import asstes from "../shared/assets.json";
 const icons = asstes.icons;
 
@@ -16,10 +16,9 @@ const FooterBox = styled(Box)(({ theme }) => ({
 function Footer() {
     return (
         <FooterBox component={"footer"}>
-            <Container>
+            <Container maxWidth="xl">
                 <Grid
                     container
-                    maxWidth="xl"
                     spacing={1}
                     columns={3}
                     justifyContent={"space-between"}
@@ -32,20 +31,20 @@ function Footer() {
                     </Grid>
                     <Grid item xs={"auto"}>
                         <Typography align="right">
-                            <Link href="https://github.com/SmarterFuture">
-                                <SimpleIcon src= { icons.github } />
-                            </Link>
-                            <Link href="https://www.buymeacoffee.com/smarterfuture">
-                                <SimpleIcon src={ icons.buymeacoffee } />
-                            </Link>
+                            <MyLink href="https://github.com/SmarterFuture">
+                                <MyIcon src= { icons.github } />
+                            </MyLink>
+                            <MyLink href="https://www.buymeacoffee.com/smarterfuture">
+                                <MyIcon src={ icons.buymeacoffee } />
+                            </MyLink>
                         </Typography>
                     </Grid>
                     <Grid item xs={3} textAlign="center">
                         <Typography variant="footer2">
                             { "Copyright © " }
-                            <Link color="inherit" href="https://github.com/SmarterFuture/web-games">
+                            <MyLink color="inherit" href="https://github.com/SmarterFuture/web-games">
                                 SmarterFuture/web-games
-                            </Link>
+                            </MyLink>
                             { " " }
                             { new Date().getFullYear() }
                             { "." }
