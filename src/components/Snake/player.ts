@@ -1,5 +1,5 @@
 import { Board } from "./board";
-import { IDir, Dir, SnakeSegment } from "./shared";
+import { IDir, Dir, SnakeSegment } from "./constants";
 
 
  export class Player {

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Player } from "./player";
 import { Board } from "./board";
 import { renderer } from "./renderer";
-import { Dir, IDir, ISceenArgs, TILE_SIZE } from "./shared";
+import { Dir, IDir, ISceenArgs, TILE_SIZE } from "./constants";
 import { Typography } from "@mui/material";
 import { Canvas } from "./styles";
 import { Controls } from "./Controls";

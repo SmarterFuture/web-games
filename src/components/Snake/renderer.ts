@@ -1,5 +1,5 @@
 import { Player } from "./player";
-import { FOOD, HEAD, BODY, TAIL, TILE_SIZE, IPos, SnakeSegment } from "./shared";
+import { FOOD, HEAD, BODY, TAIL, TILE_SIZE, IPos, SnakeSegment } from "./constants";
 
 
 function bodyType(snakeIn: number, snakeOut: number): number {

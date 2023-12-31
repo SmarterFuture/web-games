@@ -2,8 +2,8 @@ import { useState, MouseEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { Toolbar, Box, Typography, Button, Drawer, List, ListItemButton, ListItem } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
-import { MENU_STYLE_BIG, MENU_STYLE_SMALL, PAGES } from "./shared";
-import { SimpleIconButton } from "../SimpleIconButton";
+import { MENU_STYLE_BIG, MENU_STYLE_SMALL, PAGES } from "./constants";
+import { MyIconButton } from "../custom";
 
 
 export function SmallMenu() {
@@ -20,7 +20,9 @@ export function SmallMenu() {
 
     return (
         <Box sx={ MENU_STYLE_SMALL }>
-            <SimpleIconButton func={ openMenu } inner={ <MenuIcon /> } />
+            <MyIconButton onClick={ openMenu }>
+                <MenuIcon />
+            </MyIconButton>
             <Drawer
                 anchor="left"
                 open={ Boolean(openElm) } 

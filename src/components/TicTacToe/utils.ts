@@ -1,4 +1,4 @@
-import { Streak, Player } from "./shared";
+import { Streak, Player } from "./constants";
 
 
 function safeExtend(

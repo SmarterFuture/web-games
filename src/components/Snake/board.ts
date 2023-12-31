@@ -1,4 +1,4 @@
-import { IPos } from "./shared";
+import { IPos } from "./constants";
 
 
 export class Board {

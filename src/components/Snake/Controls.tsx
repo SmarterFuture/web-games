@@ -1,6 +1,6 @@
 import { Grid, Box } from "@mui/material";
-import { SimpleIconButton } from "../SimpleIconButton";
-import { IArrowKey, IControlsHandler, ARROWS, PAUSED } from "./shared";
+import { MyIconButton } from "../custom";
+import { IArrowKey, IControlsHandler, ARROWS, PAUSED } from "./constants";
 import { Item, CONROLS_STYLE_SMALL } from "./styles";
 
 
@@ -12,9 +12,17 @@ export function Controls({ pressHandler, pauseHandler, paused }: IControlsHandle
 
         if ( i % 2 == 1 ) {
             const arrowKey: IArrowKey = ARROWS[ i / 2 | 0 ];
-            inner = <SimpleIconButton func={ () => pressHandler(arrowKey.value) } inner={ arrowKey.icon }/>
+            inner = (
+                <MyIconButton onClick={ () => pressHandler(arrowKey.value) }>
+                    { arrowKey.icon }
+                </MyIconButton>
+            )
         } else if ( i === 4 ) {
-            inner = <SimpleIconButton func={ () => pauseHandler(elm => !elm) } inner={ PAUSED[ +paused ] } />
+            inner = (
+                <MyIconButton onClick={ () => pauseHandler(elm => !elm) }>
+                    { PAUSED[ +paused ] }
+                </MyIconButton>
+            )
         } 
 
         buttons.push(

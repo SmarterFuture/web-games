@@ -1,5 +1,5 @@
 import { ImageButton, ImageSrc, ImageCenter, ImageBackdrop } from "./styles";
-import { GAMES, IGameBook } from "./shared";
+import { GAMES, IGameBook } from "./constants";
 import { useNavigate } from "react-router-dom";
 import { Typography } from "@mui/material";
 

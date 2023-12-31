@@ -1,14 +1,19 @@
 import { useState } from "react";
-import { ITile, Size, Player, History, MenuProps } from "./shared";
+import { ITile, Size, Player, History, MenuProps } from "./constants";
 import { validateTicTacToe } from "./utils";
-import { SelectChangeEvent, MenuItem, FormControl, InputLabel, Select } from "@mui/material";
+import { SelectChangeEvent, MenuItem, FormControl, InputLabel, Select, Button } from "@mui/material";
 
 
 function Tile({ value, onClick }: ITile) {
     return (
-        <button onClick={ onClick }>
-            { value }
-        </button>
+        <Button onClick={ onClick } className="board.button" color="secondary" disableRipple
+            sx={{ bgcolor: "background.paper", borderStyle: "solid", borderWidth: "2px", 
+                "&:hover": { backgroundColor: "background.paper" },
+        }}>
+            <span>
+                { value }
+            </span>
+        </Button>
     );
 }
 
@@ -82,7 +87,7 @@ export function Scene({ side, endHandler }: Size) {
                 <Tile key={x} value={ tiles[pos] || "" } onClick={() => playerTurn(pos)}/>
             );
         }
-        rows.push(<div key={y} style={{fontSize: `calc(max(20cqw, 12em) / ${side})`}}>{cols}</div>); 
+        rows.push(<div key={y}>{cols}</div>); 
     }
     
     let historyButtons: Array<React.JSX.Element> = [];

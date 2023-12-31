@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Slider, Button, Dialog, DialogTitle, DialogActions } from "@mui/material";
 import { Scene } from "./Scene";
-import { Player } from "./shared";
+import { Player } from "./constants";
 
 
 function TicTacToe() {

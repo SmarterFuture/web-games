@@ -1,5 +1,5 @@
 import { AppBar, Toolbar, Container, Typography } from "@mui/material";
-import { LOGO_STYLE_SMALL, LOGO_STYLE_BIG } from "./shared";
+import { LOGO_STYLE_SMALL, LOGO_STYLE_BIG } from "./constants";
 import { AccountOptions } from "./AccountOptions";
 import { SmallMenu, BigMenu } from "./MenuList";
 
