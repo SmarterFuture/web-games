@@ -57,7 +57,7 @@ export function Scene({ side, endHandler }: Size) {
             nextHistory = history.slice(0, selected + 1);
         }
 
-        const out = validateTicTacToe(nextState, side, Math.max(3, side - 1));
+        const out = validateTicTacToe(nextState, side, Math.min(side, 4));
         setLock(out);
         if ( out ) {
             endHandler(symbol);
