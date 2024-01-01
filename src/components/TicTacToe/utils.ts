@@ -4,7 +4,7 @@ import { Streak, Player } from "./constants";
 export function validateTicTacToe(board: Array<Player | undefined>, width: number, len: number): boolean {
 
     const diagonals: number = 2 * width - 5;
-    const negBounds: number = width - 2;
+    const negBounds: number = width - 3;
 
     let streakRow: Streak = new Streak(len);
     const streakCol: Array<Streak> = Array(width).fill(undefined).map(_ => new Streak(len));
@@ -20,7 +20,7 @@ export function validateTicTacToe(board: Array<Player | undefined>, width: numbe
 
         let dia: boolean = false;
 
-        if ( posDia > diagonals && posDia < ( 2 * diagonals ) ) {
+        if ( posDia > ( diagonals - 1 ) && posDia < ( 2 * diagonals ) ) {
             const tmp = streakDia[posDia].extend(e);
             dia ||= tmp;
         }
