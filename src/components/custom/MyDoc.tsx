@@ -1,4 +1,4 @@
-import { HelpOutline } from "@mui/icons-material"
+import { InfoOutlined } from "@mui/icons-material"
 import { MyIconButton } from "./MyIconButton"
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Typography } from "@mui/material";
 import { useState } from "react";
@@ -28,7 +28,7 @@ export function MyDoc (props: MyDocProps) {
                 { props.title }
             </Typography>
             <MyIconButton onClick={ openDialog } size="small">
-                <HelpOutline/>
+                <InfoOutlined/>
             </MyIconButton>
             <Dialog
                 open = { dialog }
