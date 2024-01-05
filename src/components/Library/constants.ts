@@ -1,3 +1,5 @@
+import assets from "../../shared/assets.json";
+const banners = assets.banners;
 
 
 export interface IGameBook {
@@ -8,7 +10,7 @@ export interface IGameBook {
 
 // place holder images for time being
 export const GAMES: Array<IGameBook> = [
-    { link: "/games/tictactoe", name: "Tic Tac Toe", pic: "https://picsum.photos/400"},
-    { link: "/games/snake", name: "Snake", pic: "https://picsum.photos/400?random=2"},
-    { link: "/games/flappybird", name: "Flappy Bird", pic: "https://picsum.photos/400?random=3"}
+    { link: "/games/tictactoe", name: "Tic Tac Toe", pic: banners.snake },
+    { link: "/games/snake", name: "Snake", pic: banners.tictactoe },
+    { link: "/games/flappybird", name: "Flappy Bird", pic: banners.flappy }
 ]

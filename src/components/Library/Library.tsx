@@ -32,7 +32,7 @@ function Library() {
         <div className="library">
             { GAMES.map((book) => (
                 <div key={ book.name }>
-                    <Tile link={book.link} name={book.name} pic={book.pic} />
+                    <Tile link={ book.link } name={ book.name } pic={ book.pic } />
                 </div>
             ))}
         </div>

@@ -7,6 +7,11 @@
         "buymeacoffee": "https://lh3.googleusercontent.com/pw/ABLVV87yorjRTwbMs50-pUk77vbSqLji4nW3l6ZyNlNNLP8sV6EYJrmqFWB1tXnBmRFGdhOdZ_9h0p31ndEzXOS5ldWbTaINL1DctK_UgH6fhIDngtr9yHmH9xyi70G2tMw4p8ZoawpNSdWcYpTO8B1i6t1N",
         "github": "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
     },
+    "banners": {
+        "snake": "https://lh3.googleusercontent.com/pw/ABLVV86Vco69Dk47J7wlieOIHqPcuwf-8ujijjBMJqsAWKddBhS6-rGLtOrtRuzAmrGtvmMDQSl3KXrayIMA89RSE3lulGSedsmyeJ-071s8PmTPlrtA64aYK5Qw1d61r4NxMTEftzVqLk-beR0BPQPoBuvz",
+        "tictactoe": "https://lh3.googleusercontent.com/pw/ABLVV84GSg_mftcw14ZIQ3wxmjJPEmIyq_HQlL2nir2T7abLVYKzrgbsUjf7PyHvF3x8aVSQJShfhXoawgiqcEQiK30ydY1W0YbElOO0Tgu_XZ0fcyQSKQUGRX8b_KiRnUAj9MQfG_lAK6Jmq_k8XvxPUb6C",
+        "flappy": "https://picsum.photos/400"
+    },
     "snake": {
         "food": "https://lh3.googleusercontent.com/pw/ABLVV87DFNzew7YvYnzGYco0ROodctHzXC2Gl6y34wZgrwx_qQ0POVNn5j_lELnKieN2gUMGV0hsjWek6x42-SP11u2vsj0czs_AlYsVWnGXNVQ8ZZ0JLnb6TBmvrpa3cxQecphKOWhqGp1HuZ2sB0dH_R_I",
         "head": {
