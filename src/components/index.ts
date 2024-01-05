@@ -6,3 +6,4 @@ export { Library } from "./Library";
 export { NavBar } from "./NavBar";
 export { Snake } from "./Snake";
 export { TicTacToe } from "./TicTacToe";
+export { FlappyBird } from "./FlappyBird";

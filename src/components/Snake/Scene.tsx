@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Player } from "./player";
 import { Board } from "./board";
 import { renderer } from "./renderer";
-import { Dir, IDir, ISceenArgs, TILE_SIZE } from "./shared";
+import { Dir, IDir, ISceenArgs, TILE_SIZE } from "./constants";
 import { Typography } from "@mui/material";
 import { Canvas } from "./styles";
 import { Controls } from "./Controls";
@@ -18,6 +18,7 @@ export function Scene({ speed, endHandler }: ISceenArgs) {
     const [dead, kill] = useState<boolean>(false);
     const [paused, setPaused] = useState<boolean>(true);
     const [score, setScore] = useState<number>(0);
+    const [lock, setLock] = useState<boolean>(false);
 
 
     function changeDirection (dir: IDir) {
@@ -44,6 +45,7 @@ export function Scene({ speed, endHandler }: ISceenArgs) {
             const currentPlayer = player.current;
 
             window.onkeydown = (e) => {
+                e.preventDefault();
                 switch ( e.key ) {
                     case "w":
                     case "ArrowUp":
@@ -83,13 +85,14 @@ export function Scene({ speed, endHandler }: ISceenArgs) {
                 setScore(player.current.score);
                 kill(player.current.move());
                 renderer(ctx, player.current);
-            } else if ( dead ) {
+            } else if ( dead && !lock ) {
                 endHandler(score);
+                setLock(true);
             }
         }, speed);
 
         return () => clearInterval(interval);
-    }, [paused, dead]);
+    }, [paused, dead, lock]);
 
     return (
         <>

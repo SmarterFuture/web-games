@@ -13,15 +13,19 @@
 }
 
 .board button {
-    background-color: #FFF;
-    border: solid #000;
-    text-align: center;
-    margin: -1px -1px 0px 0px;
+    min-width: 0;
+    border-radius: 0;
+    margin: -2px -2px 0px 0px;
     flex: auto;
     flex-basis: 100%;
     aspect-ratio: 1 / 1;
     height: 100%;
-    font-size: inherit;
+    container-type: size;
+}
+
+.board span {
+    color: #fff;
+    font-size: 90cqw;
 }
 
 .library {
@@ -41,7 +45,7 @@
 
 .box {
     min-width: 20em;
-    margin-top: 10vh;
+    margin-top: 8vh;
     padding: 1em;
     display: flex;
     flex-flow: column nowrap;
@@ -74,3 +78,15 @@
     align-items: center;
 }
 
+.docs {
+    margin-top: 1vh;
+    margin-left: 1vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+code {
+    font-family: monospace;
+    color: #c7254e;
+}

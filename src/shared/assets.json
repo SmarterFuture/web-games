@@ -4,8 +4,13 @@
         "__source": "https://photos.app.goo.gl/hTfLajd9mGdzwqEc6"
     },
     "icons": {
-        "buymeacoffee": "https://ucac765dca7d2f7c5ceee0445e50.previews.dropboxusercontent.com/p/thumb/ACLDn7fGOR72oKmv_NMj3CdOWPYbbjT5YS2fF6DeVfwFtXvxldtquh5Gh2LIL1Wocbxw0XsqnRXKGS-FfVm32iq5gIwLOKQI94Vu-7IFKHz574ke0sFb8pCCWiakUOmT8715cLJLWSO7aokbHSbYGgkshbz_U-GRsvI3tuoNLqvDMkrTVZUSg-5Zp9mL6n9P0Enak0asrdxPkzcW0Eop1c3p5M8xDmuiy4NGyv_kf1a2CdSuOWEHBoAa2p8jdLYTu_IL1nWk1eCOSiAszHUE9wpNWAXE3Kjiy4m2SROpLdBr7wqYsTrpiGyyWQZ6lCOQNV7G2Hn516UTM2O5-hGLtPtZ/p.png",
+        "buymeacoffee": "https://lh3.googleusercontent.com/pw/ABLVV87yorjRTwbMs50-pUk77vbSqLji4nW3l6ZyNlNNLP8sV6EYJrmqFWB1tXnBmRFGdhOdZ_9h0p31ndEzXOS5ldWbTaINL1DctK_UgH6fhIDngtr9yHmH9xyi70G2tMw4p8ZoawpNSdWcYpTO8B1i6t1N",
         "github": "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
+    },
+    "banners": {
+        "tictactoe": "https://lh3.googleusercontent.com/pw/ABLVV86Vco69Dk47J7wlieOIHqPcuwf-8ujijjBMJqsAWKddBhS6-rGLtOrtRuzAmrGtvmMDQSl3KXrayIMA89RSE3lulGSedsmyeJ-071s8PmTPlrtA64aYK5Qw1d61r4NxMTEftzVqLk-beR0BPQPoBuvz",
+        "snake": "https://lh3.googleusercontent.com/pw/ABLVV84GSg_mftcw14ZIQ3wxmjJPEmIyq_HQlL2nir2T7abLVYKzrgbsUjf7PyHvF3x8aVSQJShfhXoawgiqcEQiK30ydY1W0YbElOO0Tgu_XZ0fcyQSKQUGRX8b_KiRnUAj9MQfG_lAK6Jmq_k8XvxPUb6C",
+        "flappy": "https://picsum.photos/400"
     },
     "snake": {
         "food": "https://lh3.googleusercontent.com/pw/ABLVV87DFNzew7YvYnzGYco0ROodctHzXC2Gl6y34wZgrwx_qQ0POVNn5j_lELnKieN2gUMGV0hsjWek6x42-SP11u2vsj0czs_AlYsVWnGXNVQ8ZZ0JLnb6TBmvrpa3cxQecphKOWhqGp1HuZ2sB0dH_R_I",

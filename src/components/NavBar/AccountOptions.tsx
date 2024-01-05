@@ -2,8 +2,8 @@ import { MouseEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box, Typography, Menu, MenuItem } from "@mui/material";
 import { AccountCircle } from "@mui/icons-material";
-import { SimpleIconButton } from "../SimpleIconButton";
-import { USER_PAGES } from "./shared";
+import { MyIconButton } from "../custom";
+import { USER_PAGES } from "./constants";
 
 
 export function AccountOptions() {
@@ -20,7 +20,9 @@ export function AccountOptions() {
 
     return (
         <Box sx={{flexGrow: 0}}>
-            <SimpleIconButton func={ openAccSettings } inner={ <AccountCircle/> } />
+            <MyIconButton onClick={ openAccSettings }>
+                <AccountCircle /> 
+            </MyIconButton>
             <Menu
                 anchorEl={accNav}
                     anchorOrigin={{
