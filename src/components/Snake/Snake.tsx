@@ -38,7 +38,7 @@ function Snake() {
                         or simply <code>w / a / s / d</code> on your keyboard
                     </li>
                     <li>Goal of this game is to get your snake to be as long as possible</li>
-                    <li>Sanke is growing by eating apples randomly placed on the game baord</li>
+                    <li>Snake is growing by eating apples randomly placed on the game board</li>
                 </ul>
             </MyDoc>
             <div className="box">
