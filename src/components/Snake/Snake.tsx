@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Scene } from "./Scene";
 import {Button, Dialog, DialogActions, DialogTitle, Slider} from "@mui/material";
+import {MyDoc} from "../custom";
 
 
 function Snake() {
@@ -27,26 +28,40 @@ function Snake() {
     }
     
     return (
-        <div className="box">
-            <div className="sliderBox">
-                <Slider min={1} max={10} onChange={handleChange} valueLabelDisplay="auto" />
+        <>
+            <MyDoc title="Snake" dialogHeading="Snake game documentation">
+                <ul>
+                    <li>To start or pause game click on play button or simple press <code>p</code></li>
+                    <li>
+                        To navigate click any of the given arrow buttons or press <code>
+                            ArrowUp / ArrowLeft / ArrowDown / ArrowRight </code>
+                        or simply <code>w / a / s / d</code> on your keyboard
+                    </li>
+                    <li>Goal of this game is to get your snake to be as long as possible</li>
+                    <li>Sanke is growing by eating apples randomly placed on the game baord</li>
+                </ul>
+            </MyDoc>
+            <div className="box">
+                <div className="sliderBox">
+                    <Slider min={1} max={10} onChange={handleChange} valueLabelDisplay="auto" />
+                </div>
+                <Button variant="contained" className="buttonBox" onClick={ handleReset }>
+                    Reset
+                </Button>
+                <Scene key={+key} speed={ speed } endHandler={ openDialog }/>
+                <Dialog
+                    open={ !!dialog }
+                    onClose={ closeDialog }
+                >
+                    <DialogTitle>
+                        Congratulations, you've scored { dialog } points!
+                    </DialogTitle>
+                    <DialogActions>
+                        <Button onClick={() => { closeDialog(); handleReset(); }}> New Game </Button>
+                    </DialogActions>
+                </Dialog>
             </div>
-            <Button variant="contained" className="buttonBox" onClick={ handleReset }>
-                Reset
-            </Button>
-            <Scene key={+key} speed={ speed } endHandler={ openDialog }/>
-            <Dialog
-                open={ !!dialog }
-                onClose={ closeDialog }
-            >
-                <DialogTitle>
-                    Congratulations, you've scored { dialog } points!
-                </DialogTitle>
-                <DialogActions>
-                    <Button onClick={() => { closeDialog(); handleReset(); }}> New Game </Button>
-                </DialogActions>
-            </Dialog>
-        </div>
+        </>
     );
 }
 
