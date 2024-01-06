@@ -27,7 +27,7 @@ function Tile({link, name, pic}: IGameBook) {
     );
 }
 
-function Library() {
+export function Library() {
     return (
         <div className="library">
             { GAMES.map((book) => (
@@ -39,4 +39,3 @@ function Library() {
     );
 }
 
-export default Library;

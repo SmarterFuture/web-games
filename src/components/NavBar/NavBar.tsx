@@ -5,8 +5,7 @@ import { SmallMenu, BigMenu } from "./MenuList";
 
 
 
-function NavBar() {
-
+export function NavBar() {
     return (
         <AppBar position="static">
             <Container maxWidth="xl">
@@ -33,7 +32,4 @@ function NavBar() {
         </AppBar>
     )
 }
-
-export default NavBar;
-
 

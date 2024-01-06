@@ -4,7 +4,7 @@ import {Button, Dialog, DialogActions, DialogTitle, Slider} from "@mui/material"
 import {MyDoc} from "../custom";
 
 
-function Snake() {
+export function Snake() {
     const [speed, setSpeed] =useState<number>(200);
     const [key, setKey] = useState<boolean>(false);
     const [dialog, setDialog] = useState<number | null>(null);
@@ -65,4 +65,3 @@ function Snake() {
     );
 }
 
-export default Snake;

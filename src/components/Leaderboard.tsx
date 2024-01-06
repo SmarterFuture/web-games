@@ -1,13 +1,9 @@
+import { TBDPage } from "./custom";
 
 
-function Leaderboard() {
+export function Leaderboard() {
     return (
-        <div className="center_mid">
-            <div>
-                This is leaderboard page
-            </div>
-        </div>
+        <TBDPage page="Leaderboard" />
     );
 };
 
-export default Leaderboard;
