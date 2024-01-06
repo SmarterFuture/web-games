@@ -1,20 +1,19 @@
 # WEB GAMES
 
-This project is focused on exploring how does full-stack development works and on working with PostgreSQL. You can see currently deployed version [here](http://web-games.surge.sh/).
+This project is focused on exploring how does full-stack development works and on working with PostgreSQL. You can see currently deployed version [here](http://web-games.surge.sh/)
 
-- [WEB GAMES](#WEB-GAMES)
-    - [Quick start](#quick-start)
-        - [Cloning](#cloning)
-        - [Branches](#branches)
-        - [Installing dependencies](#installing-dependencies)
-    - [Usage](#usage)
-        - [Build](#build)
-        - [Local development](#local-development)
-    - [Documentation](#documentation)
-    - [Contribution](#Contribution)
-        - [Code style and rules](#code-style-and-rules)
-    - [Future plans](#future-plans)
-    - [Supporting](#supporting)
+- [Quick start](#quick-start)
+    - [Cloning](#cloning)
+    - [Branches](#branches)
+    - [Installing dependencies](#installing-dependencies)
+- [Usage](#usage)
+    - [Build](#build)
+    - [Local development](#local-development)
+- [Documentation](#documentation)
+- [Contribution](#Contribution)
+    - [Code style and rules](#code-style-and-rules)
+- [Future plans](#future-plans)
+- [Supporting](#supporting)
 
 
 ## Quick start
