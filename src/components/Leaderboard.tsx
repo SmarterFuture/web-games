@@ -5,5 +5,5 @@ export function Leaderboard() {
     return (
         <TBDPage page="Leaderboard" />
     );
-};
+}
 

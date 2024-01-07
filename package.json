@@ -5,7 +5,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "serve": "react-scripts build && ./serve"
+    "serve": "react-scripts build && ./serve",
+    "lint": "eslint src/**/*.ts src/**/*.tsx"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -19,7 +20,9 @@
   },
   "devDependencies": {
     "@types/react": "^18.2.45",
-    "@types/react-dom": "^18.2.17"
+    "@types/react-dom": "^18.2.17",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2"
   },
   "browserslist": {
     "production": [
