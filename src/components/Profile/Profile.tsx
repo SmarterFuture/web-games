@@ -1,9 +1,9 @@
 import { TBDPage } from "../custom";
 
 
-export function Profil() {
+export function Profile() {
     return (
-        <TBDPage page="Profil" />
+        <TBDPage page="Profile" />
     );
 };
 

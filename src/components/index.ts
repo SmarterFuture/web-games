@@ -1,6 +1,6 @@
 export { Leaderboard } from "./Leaderboard";
 export { NoPage } from "./NoPage";
-export { Profil, MyAccount } from "./Profil";
+export { Profile, MyAccount } from "./Profile";
 export { Footer } from "./Footer";
 export { Library } from "./Library";
 export { NavBar } from "./NavBar";

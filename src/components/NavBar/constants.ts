@@ -12,7 +12,7 @@ export const PAGES: Array<IPage> = [
 ]
 
 export const USER_PAGES: Array<IPage> = [
-    { name: "Profil", link: "/user"},
+    { name: "Profile", link: "/user"},
     { name: "My Account", link: "/user/myaccount" }
 ]
 
