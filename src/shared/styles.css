@@ -44,6 +44,7 @@
 }
 
 .box {
+
     min-width: 20em;
     margin-top: 8vh;
     padding: 1em;
@@ -79,16 +80,8 @@
     align-items: center;
 }
 
-.docs {
-    margin-top: 1vh;
-    margin-left: 1vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
 code {
     font-family: monospace;
-    color: #c7254e;
+    color: #E742A0;
 }
 

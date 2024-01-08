@@ -1,6 +1,5 @@
 import React from "react";
 import { createTheme } from "@mui/material";
-import { purple, yellow } from "@mui/material/colors";
 
 
 declare module '@mui/material/styles' {
@@ -29,12 +28,16 @@ declare module '@mui/material/Typography' {
 
 export const theme = createTheme({
 	palette: {
-		primary: purple,
-		secondary: yellow,
+		primary: { 
+            main: "#A91079"
+        },
+		secondary: { 
+            main: "#383838"
+        },
 		mode: "dark",
 		background: {
 			default: "#121212",
-			paper: "#292929"
+			paper: "#202020"
 		}
 	},
 	components: {
@@ -50,7 +53,33 @@ export const theme = createTheme({
 					footer2: "p"
 				}
 			}
-		}
+		},
+        MuiButton: {
+            styleOverrides: {
+                root: ({ownerState}) => ({
+                    ...(ownerState.variant === "text"
+                        && ownerState.color === "primary" 
+                        && { 
+                            color: "#E742A0"
+                        })
+                })
+            }
+        },
+        MuiDialog: {
+            styleOverrides: {
+                paper: {
+                    backgroundColor: "#383838",
+                    backgroundImage: "none"
+                }
+            }
+        },
+        MuiLink: {
+            styleOverrides: {
+                root: {
+                    color: "#E742A0"
+                }
+            }
+        }
 	}
 });
 
