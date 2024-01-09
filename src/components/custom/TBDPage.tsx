@@ -16,8 +16,8 @@ export function TBDPage({ page }: ITBDPage) {
             <Typography variant="body1">
                 This page is currently under construction
             </Typography>
-            <Link href="/">
-                Return home
+            <Link href="/games">
+                Return to game library
             </Link>
         </div>
     );

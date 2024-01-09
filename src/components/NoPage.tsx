@@ -9,8 +9,8 @@ export function NoPage() {
             <Typography variant="body1">
                 This page does not exist
             </Typography>
-            <Link href="/">
-                Return home
+            <Link href="/games">
+                Return to game library
             </Link>
         </div>
     );

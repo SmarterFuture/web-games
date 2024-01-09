@@ -43,6 +43,12 @@ export const theme = createTheme({
 			paper: "#202020"
 		}
 	},
+    typography: {
+        about: {
+            color: "#fff",
+            lineHeight: "2em",
+        }
+    },
 	components: {
 		MuiAppBar: {
 			defaultProps: {
@@ -56,7 +62,7 @@ export const theme = createTheme({
 					footer2: "p",
                     about: "p"
 				}
-			}
+			},
 		},
         MuiButton: {
             styleOverrides: {
@@ -83,6 +89,20 @@ export const theme = createTheme({
                     color: "#E742A0"
                 }
             }
+        },
+        MuiTableHead: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: "#603354",
+                }
+            }
+        },
+        MuiTableCell: {
+            styleOverrides: {
+                head: {
+                    fontWeight: "bold"
+                }
+            }
         }
 	}
 });
@@ -101,8 +121,4 @@ theme.typography.footer2 = {
 		fontSize: ".5em"
 	}
 };
-theme.typography.about = {
-    color: "#fff",
-    fontSize: "1.2em",
-    lineHeight: "2em"
-};
+

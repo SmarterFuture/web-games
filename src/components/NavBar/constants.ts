@@ -17,7 +17,8 @@ export const USER_PAGES: Array<IPage> = [
 ]
 
 export const LOGO_STYLE_SMALL = {
-    mr: 3,
+    mr: "auto",
+    ml: "auto",
     letterSpacing: ".1em",
     textDecoration: "none",
     flexGrow: 1,

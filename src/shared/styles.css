@@ -66,7 +66,7 @@
 }
 
 .center_mid {
-    height: 90vh;
+    min-height: 90vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -86,7 +86,14 @@ code {
 }
 
 .about {
-    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 7vh;
+    min-height: 90vh;
+    text-align: justify;
 }
 
 .about_table {
@@ -96,11 +103,3 @@ code {
     margin-bottom: 1em;
 }
 
-.about_table th, td {
-    padding-left: .5em;
-    padding-right: .5em;
-}
-
-.about_table thead {
-    background-color: #603354;
-}
