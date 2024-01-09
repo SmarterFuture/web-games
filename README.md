@@ -73,7 +73,7 @@ git push origin <your_branch>
 Merge requests are welcomed.
 
 ### Code style and rules
-We follow [these best practices](https://medium.com/@warkiringoda/typescript-best-practices-2021-a58aee199661) and TODO formatter
+I try to follow [these best practices](https://medium.com/@warkiringoda/typescript-best-practices-2021-a58aee199661) and TODO formatter
 
 ### Assets library
 All assets can be found [here](https://photos.app.goo.gl/hTfLajd9mGdzwqEc6)
@@ -91,4 +91,4 @@ All assets can be found [here](https://photos.app.goo.gl/hTfLajd9mGdzwqEc6)
 
 ## Supporting
 
-You can support us [here](https://www.buymeacoffee.com/smarterfuture)
+You can support me [here](https://www.buymeacoffee.com/smarterfuture)

@@ -21,7 +21,7 @@ const data: Array<IRow> = [
 export function About() {
     return (
         <div className="about">
-            <Typography sx={{ mb: ".5em" }} variant="h3">
+            <Typography sx={{ mb: ".5em" }} variant="h4">
                 About
             </Typography>
             <Container maxWidth="lg">

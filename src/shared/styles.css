@@ -92,7 +92,7 @@ code {
     align-items: center;
     width: 100%;
     margin-top: 7vh;
-    min-height: 90vh;
+    min-height: calc(83vh - 192px);
     text-align: justify;
 }
 
