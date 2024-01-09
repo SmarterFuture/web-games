@@ -1,2 +1,2 @@
 export { Profile } from "./Profile"; 
-export { MyAccount } from "./MyAccount" 
+export { MyAccount } from "./MyAccount"; 

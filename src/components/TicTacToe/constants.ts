@@ -1,5 +1,7 @@
 import { MouseEventHandler } from "react";
 
+
+// eslint-disable-next-line no-shadow
 export enum Player {
     X = "X",
     O = "O"
@@ -55,5 +57,5 @@ export const MenuProps = {
         maxHeight: "10em"
         }
     }
-}
+};
 

@@ -16,7 +16,7 @@ const data: Array<IRow> = [
         role: "Front end JavaScript library for building user interface based on components" },
     { initial: "N", name: "Node.js", 
         role: "Cross-platform JavaScript runtime environment" }
-]
+];
 
 export function About() {
     return (

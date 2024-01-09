@@ -2,11 +2,11 @@
   "main": "/src/index.tsx",
   "scripts": {
     "start": "react-scripts start",
-    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "serve": "DISABLE_ESLINT_PLUGIN=true react-scripts build && ./serve",
-    "lint": "eslint src/**/*.ts src/**/*.tsx"
+    "serve": "react-scripts build && ./serve",
+    "lint": "eslint src --ext .tsx,.ts"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",

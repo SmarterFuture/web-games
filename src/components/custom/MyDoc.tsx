@@ -1,5 +1,5 @@
-import { InfoOutlined } from "@mui/icons-material"
-import { MyIconButton } from "./MyIconButton"
+import { InfoOutlined } from "@mui/icons-material";
+import { MyIconButton } from "./MyIconButton";
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Typography, Container } from "@mui/material";
 import { useState, JSX } from "react";
 
@@ -19,7 +19,7 @@ export function MyDoc (props: MyDocProps) {
     }
 
     function closeDialog() {
-        setDialog(false)
+        setDialog(false);
     }
     
     return (
@@ -49,4 +49,4 @@ export function MyDoc (props: MyDocProps) {
                 </DialogActions>
             </Dialog>
         </Container>
-    )}
+    );}

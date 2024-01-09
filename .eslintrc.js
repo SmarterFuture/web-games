@@ -39,7 +39,10 @@ module.exports = {
 		eqeqeq: ["error", "always"],
 		"import/no-deprecated": "warn",
 		"import/no-extraneous-dependencies": "error",
-		"import/no-unassigned-import": "warn",
+		"import/no-unassigned-import": [
+            "warn",
+            { "allow": ["**/*.css"] }
+        ],
 		"no-cond-assign": "error",
 		"no-duplicate-case": "error",
 		"no-duplicate-imports": "error",
@@ -62,6 +65,23 @@ module.exports = {
 		"no-void": "error",
 		"prefer-const": "warn",
 		"react/react-in-jsx-scope": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "warn",
+            {
+                "argsIgnorePattern": "^_",
+                "varsIgnorePattern": "^_",
+                "caughtErrorsIgnorePattern": "^_",
+            }
+        ],
+        "no-unused-vars": [
+            "warn",
+            {
+                "argsIgnorePattern": "^_",
+                "varsIgnorePattern": "^_",
+                "caughtErrorsIgnorePattern": "^_",
+            }
+        ],
+
 	},
 	settings: {
 		jsdoc: {

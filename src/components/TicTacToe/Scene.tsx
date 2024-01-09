@@ -8,7 +8,7 @@ function Tile({ value, onClick }: ITile) {
     return (
         <Button onClick={ onClick } className="board.button" color="secondary" disableRipple
             sx={{ bgcolor: "background.paper", borderStyle: "solid", borderWidth: "2px", 
-                "&:hover": { backgroundColor: "background.paper" },
+                "&:hover": { backgroundColor: "background.paper" }
         }}>
             <span>
                 { value }
@@ -32,7 +32,7 @@ export function Scene({ side, endHandler }: Size) {
         setXNext(!!(move % 2));
         setSelected(move);
         if ( move + 1 !== history.length ) {
-            setLock(false)
+            setLock(false);
         }
     }
 
@@ -71,18 +71,18 @@ export function Scene({ side, endHandler }: Size) {
                 y: index / side | 0
             },
             end: out
-        }
+        };
 
         nextHistory.push(historyLog);
         setHistory(nextHistory);
         setSelected( nextHistory.length - 1);
     }
 
-    let rows: Array<React.JSX.Element> = [];
+    const rows: Array<React.JSX.Element> = [];
     for (let y = 0; y < side; y++) {
-        let cols: Array<React.JSX.Element> = [];
+        const cols: Array<React.JSX.Element> = [];
         for (let x = 0; x < side; x++) {
-            const pos = y * side + x
+            const pos = y * side + x;
             cols.push(
                 <Tile key={x} value={ tiles[pos] || "" } onClick={() => playerTurn(pos)}/>
             );
@@ -90,13 +90,13 @@ export function Scene({ side, endHandler }: Size) {
         rows.push(<div key={y}>{cols}</div>); 
     }
     
-    let historyButtons: Array<React.JSX.Element> = [];
+    const historyButtons: Array<React.JSX.Element> = [];
     history.forEach((e, i) => {
         let message: string;
         if ( e.end ) {
-            message = `${ e.player } won`
+            message = `${ e.player } won`;
         } else {
-            message = `${ i + 1 }. ${ e.player }${ "abcdefghij"[e.pos.x] }${ e.pos.y + 1 }`
+            message = `${ i + 1 }. ${ e.player }${ "abcdefghij"[e.pos.x] }${ e.pos.y + 1 }`;
         }
 
         historyButtons.push(
@@ -104,7 +104,7 @@ export function Scene({ side, endHandler }: Size) {
                 { message }
             </MenuItem>
         );
-    })
+    });
 
     return (
         <>

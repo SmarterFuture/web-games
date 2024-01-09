@@ -12,7 +12,7 @@ export function TicTacToe() {
 
     function handleChange(_: Event, newValue: number | number[]) {
         setSize(newValue as number);
-        setKey(!key)
+        setKey(!key);
     }
     function handleReset() {
         setKey(!key);
@@ -21,7 +21,7 @@ export function TicTacToe() {
         setDialog(winner);
     }
     function closeDialog() {
-        setDialog(null)
+        setDialog(null);
     }
     
     return (
@@ -62,6 +62,6 @@ export function TicTacToe() {
                 </Dialog>
             </div>
         </>
-    )
+    );
 }
 

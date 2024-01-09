@@ -26,8 +26,8 @@ export const Dir = {
     Up: { dx: 0, dy: -1, _state: 0 } as IDir,
     Left: { dx: -1, dy: 0, _state: 1 } as IDir,
     Down: { dx: 0, dy: 1, _state: 2 } as IDir,
-    Right: { dx: 1, dy: 0, _state: 3 } as IDir,
-}
+    Right: { dx: 1, dy: 0, _state: 3 } as IDir
+};
 
 export interface IArrowKey {
     icon: ReactElement<SvgIconProps>,
@@ -81,7 +81,7 @@ export const ARROWS: Array<IArrowKey> = [
 ];
 
 export const PAUSED = [
-    <Pause />,
-    <PlayArrow />
-]
+    <Pause key="0"/>,
+    <PlayArrow key="1"/>
+];
 

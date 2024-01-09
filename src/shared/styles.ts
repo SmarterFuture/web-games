@@ -3,7 +3,6 @@ import { createTheme } from "@mui/material";
 
 
 declare module '@mui/material/styles' {
-    // eslint-disable-next-line no-unused-vars
 	interface TypographyVariants {
 		footer1: React.CSSProperties;
 		footer2: React.CSSProperties;
@@ -11,7 +10,6 @@ declare module '@mui/material/styles' {
 	}
 
 	// allow configuration using `createTheme`
-    // eslint-disable-next-line no-unused-vars
 	interface TypographyVariantsOptions {
 		footer1?: React.CSSProperties;
 		footer2?: React.CSSProperties;
@@ -21,7 +19,6 @@ declare module '@mui/material/styles' {
 
 // Update the Typography's variant prop options
 declare module '@mui/material/Typography' {
-    // eslint-disable-next-line no-unused-vars
 	interface TypographyPropsVariantOverrides {
 		footer1: true;
 		footer2: true;
@@ -46,7 +43,7 @@ export const theme = createTheme({
     typography: {
         about: {
             color: "#fff",
-            lineHeight: "2em",
+            lineHeight: "2em"
         }
     },
 	components: {
@@ -62,7 +59,7 @@ export const theme = createTheme({
 					footer2: "p",
                     about: "p"
 				}
-			},
+			}
 		},
         MuiButton: {
             styleOverrides: {
@@ -93,7 +90,7 @@ export const theme = createTheme({
         MuiTableHead: {
             styleOverrides: {
                 root: {
-                    backgroundColor: "#603354",
+                    backgroundColor: "#603354"
                 }
             }
         },

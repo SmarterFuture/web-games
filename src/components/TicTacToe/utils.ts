@@ -33,7 +33,7 @@ export function validateTicTacToe(board: Array<Player | undefined>, width: numbe
             streakRow = new Streak(len);
         }
         const row = streakRow.extend(e);
-        const col = streakCol[idx].extend(e)
+        const col = streakCol[idx].extend(e);
 
         if ( row || col || dia ) { return true; }
     }

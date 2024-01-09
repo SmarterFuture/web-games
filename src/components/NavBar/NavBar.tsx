@@ -30,6 +30,6 @@ export function NavBar() {
                 </Toolbar>
             </Container>
         </AppBar>
-    )
+    );
 }
 

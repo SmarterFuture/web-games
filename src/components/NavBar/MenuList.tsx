@@ -38,7 +38,7 @@ export function SmallMenu() {
                     { PAGES.map((page) => (
                         <ListItem key={ page.name } disablePadding>
                             <ListItemButton
-                                onClick={ () => { closeMenu(); navigate(page.link) }}
+                                onClick={ () => { closeMenu(); navigate(page.link); }}
                             >
                                 <Typography textAlign={"center"}>
                                     { page.name.toUpperCase() }

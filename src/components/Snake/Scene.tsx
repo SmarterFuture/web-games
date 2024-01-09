@@ -23,7 +23,7 @@ export function Scene({ speed, endHandler }: ISceenArgs) {
 
     function changeDirection (dir: IDir) {
         if ( player.current ) {
-            player.current.change_dir(dir)
+            player.current.change_dir(dir);
         } 
     }
 
@@ -65,10 +65,10 @@ export function Scene({ speed, endHandler }: ISceenArgs) {
                         break;
                     case "p":
                         setPaused(elm => !elm);
-                        break
+                        break;
                     default:
                 }
-            }
+            };
         }
 
         return () => {
@@ -92,7 +92,7 @@ export function Scene({ speed, endHandler }: ISceenArgs) {
         }, speed);
 
         return () => clearInterval(interval);
-    }, [paused, dead, lock]);
+    });
 
     return (
         <>
