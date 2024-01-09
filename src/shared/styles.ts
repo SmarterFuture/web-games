@@ -7,6 +7,7 @@ declare module '@mui/material/styles' {
 	interface TypographyVariants {
 		footer1: React.CSSProperties;
 		footer2: React.CSSProperties;
+        about: React.CSSProperties;
 	}
 
 	// allow configuration using `createTheme`
@@ -14,6 +15,7 @@ declare module '@mui/material/styles' {
 	interface TypographyVariantsOptions {
 		footer1?: React.CSSProperties;
 		footer2?: React.CSSProperties;
+        about?: React.CSSProperties;
 	}
 }
 
@@ -23,6 +25,7 @@ declare module '@mui/material/Typography' {
 	interface TypographyPropsVariantOverrides {
 		footer1: true;
 		footer2: true;
+        about: true;
 	}
 }
 
@@ -50,7 +53,8 @@ export const theme = createTheme({
 			defaultProps: {
 				variantMapping: {
 					footer1: "p",
-					footer2: "p"
+					footer2: "p",
+                    about: "p",
 				}
 			}
 		},
@@ -96,4 +100,9 @@ theme.typography.footer2 = {
 	[theme.breakpoints.down("md")]: {
 		fontSize: ".5em"
 	}
+};
+theme.typography.about = {
+    color: "#fff",
+    fontSize: "1.2em",
+    lineHeight: "2em"
 };

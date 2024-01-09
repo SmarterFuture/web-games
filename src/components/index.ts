@@ -7,3 +7,4 @@ export { NavBar } from "./NavBar";
 export { Snake } from "./Snake";
 export { TicTacToe } from "./TicTacToe";
 export { FlappyBird } from "./FlappyBird";
+export { About } from "./About";

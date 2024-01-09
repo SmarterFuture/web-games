@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./shared/styles.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import { NoPage, Leaderboard, Library, NavBar, Profile, Snake, TicTacToe, Footer, FlappyBird, MyAccount } from "./components";
+import { NoPage, Leaderboard, Library, NavBar, Profile, Snake, TicTacToe, Footer, FlappyBird, MyAccount, About } from "./components";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "./shared/styles";
 import { CssBaseline } from "@mui/material";
@@ -17,7 +17,7 @@ root.render(
             <Router>
                 <NavBar />
                 <Routes>
-                    <Route index element={ <Library/> } />
+                    <Route index element={ <About/> } />
                     <Route path="leaderboard" element={ <Leaderboard /> }/>
                     <Route path="games">
                         <Route path="" element={ <Library/> } />

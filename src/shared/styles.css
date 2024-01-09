@@ -85,3 +85,22 @@ code {
     color: #E742A0;
 }
 
+.about {
+    width: 60%;
+}
+
+.about_table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.about_table th, td {
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+.about_table thead {
+    background-color: #603354;
+}

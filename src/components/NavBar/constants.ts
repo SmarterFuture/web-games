@@ -6,7 +6,7 @@ interface IPage {
 }
 
 export const PAGES: Array<IPage> = [
-    { name: "Home", link: "" },
+    { name: "About", link: "" },
     { name: "Leaderboard", link: "/leaderboard" },
     { name: "Games", link: "/games" }
 ]
