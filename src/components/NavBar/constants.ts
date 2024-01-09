@@ -6,13 +6,13 @@ interface IPage {
 }
 
 export const PAGES: Array<IPage> = [
-    { name: "Home", link: "" },
+    { name: "About", link: "" },
     { name: "Leaderboard", link: "/leaderboard" },
     { name: "Games", link: "/games" }
 ]
 
 export const USER_PAGES: Array<IPage> = [
-    { name: "Profil", link: "/user"},
+    { name: "Profile", link: "/user"},
     { name: "My Account", link: "/user/myaccount" }
 ]
 

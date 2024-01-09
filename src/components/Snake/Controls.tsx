@@ -10,26 +10,26 @@ export function Controls({ pressHandler, pauseHandler, paused }: IControlsHandle
     for ( let i = 0; i < 9; i++ ) {
         let inner = undefined;
 
-        if ( i % 2 == 1 ) {
+        if ( i % 2 === 1 ) {
             const arrowKey: IArrowKey = ARROWS[ i / 2 | 0 ];
             inner = (
                 <MyIconButton onClick={ () => pressHandler(arrowKey.value) }>
                     { arrowKey.icon }
                 </MyIconButton>
-            )
+            );
         } else if ( i === 4 ) {
             inner = (
                 <MyIconButton onClick={ () => pauseHandler(elm => !elm) }>
                     { PAUSED[ +paused ] }
                 </MyIconButton>
-            )
+            );
         } 
 
         buttons.push(
             <Grid item xs={1} key={i} className="mid">
                 <Item>{ inner }</Item>
             </Grid>
-        )
+        );
     }
     
     return (

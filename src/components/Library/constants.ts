@@ -1,4 +1,4 @@
-import assets from "../../shared/assets.json";
+import assets from "../../shared/assets.json";
 const banners = assets.banners;
 
 
@@ -8,7 +8,6 @@ export interface IGameBook {
     name: string,
 }
 
-// place holder images for time being
 export const GAMES: Array<IGameBook> = [
     { link: "/games/tictactoe", name: "Tic Tac Toe", pic: banners.snake },
     { link: "/games/snake", name: "Snake", pic: banners.tictactoe },

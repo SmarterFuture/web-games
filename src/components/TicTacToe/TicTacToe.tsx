@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Slider, Button, Dialog, DialogTitle, DialogActions, Typography } from "@mui/material";
+import { Slider, Button, Dialog, DialogTitle, DialogActions } from "@mui/material";
 import { Scene } from "./Scene";
 import { Player } from "./constants";
 import {MyDoc} from "../custom";
 
 
-function TicTacToe() {
+export function TicTacToe() {
     const [size, setSize] = useState<number>(3);
     const [key, setKey] = useState<boolean>(false);
     const [dialog, setDialog] = useState<Player | null>(null);
@@ -65,4 +65,3 @@ function TicTacToe() {
     )
 }
 
-export default TicTacToe;

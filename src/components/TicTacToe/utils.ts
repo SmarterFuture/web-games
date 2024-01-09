@@ -10,7 +10,7 @@ export function validateTicTacToe(board: Array<Player | undefined>, width: numbe
     const streakCol: Array<Streak> = Array(width).fill(undefined).map(_ => new Streak(len));
     const streakDia: Array<Streak> = Array(2 * diagonals).fill(undefined).map(_ => new Streak(len));
 
-    for (let i = 0; i < (width ** 2); i++) {
+    for (let i = 0; i < (width ** 2); i++) {
         const e = board[i];
         const idx = i % width;
         const idy = i / width | 0;
@@ -24,7 +24,7 @@ export function validateTicTacToe(board: Array<Player | undefined>, width: numbe
             const tmp = streakDia[posDia].extend(e);
             dia ||= tmp;
         }
-        if ( negDia > -1 && negDia < diagonals) {
+        if ( negDia > -1 && negDia < diagonals) {
             const tmp = streakDia[negDia].extend(e);
             dia ||= tmp;
         }

@@ -20,7 +20,7 @@ export interface SnakeSegment {
     x: number,
     y: number,
     dir: number
-};
+}
 
 export const Dir = {
     Up: { dx: 0, dy: -1, _state: 0 } as IDir,
