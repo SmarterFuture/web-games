@@ -34,7 +34,7 @@ export function Scene({ speed, endHandler }: ISceenArgs) {
         
         canvasRef.current.width = canvasRef.current.offsetWidth;
         canvasRef.current.height = canvasRef.current.offsetHeight;
-        const scale = canvasRef.current.height / ( 21 * TILE_SIZE );
+        const scale = canvasRef.current.height / ( 21 * TILE_SIZE );
 
         ctxRef.current = canvasRef.current.getContext("2d");
         
@@ -80,7 +80,7 @@ export function Scene({ speed, endHandler }: ISceenArgs) {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            if ( player.current && ctxRef.current && !paused && !dead) {
+            if ( player.current && ctxRef.current && !paused && !dead) {
                 const ctx = ctxRef.current;
                 setScore(player.current.score);
                 kill(player.current.move());
@@ -103,5 +103,5 @@ export function Scene({ speed, endHandler }: ISceenArgs) {
             <Controls pressHandler={ changeDirection } pauseHandler={ setPaused } paused={ paused } />
         </>
     );
-};
+}
 

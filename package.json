@@ -2,10 +2,10 @@
   "main": "/src/index.tsx",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "serve": "react-scripts build && ./serve",
+    "serve": "DISABLE_ESLINT_PLUGIN=true react-scripts build && ./serve",
     "lint": "eslint src/**/*.ts src/**/*.tsx"
   },
   "dependencies": {

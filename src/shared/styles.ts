@@ -54,15 +54,15 @@ export const theme = createTheme({
 				variantMapping: {
 					footer1: "p",
 					footer2: "p",
-                    about: "p",
+                    about: "p"
 				}
 			}
 		},
         MuiButton: {
             styleOverrides: {
                 root: ({ownerState}) => ({
-                    ...(ownerState.variant === "text"
-                        && ownerState.color === "primary" 
+                    ...(ownerState.variant === "text" 
+                        && ownerState.color === "primary" 
                         && { 
                             color: "#E742A0"
                         })

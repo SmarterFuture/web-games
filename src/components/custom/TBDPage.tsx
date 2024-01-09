@@ -21,4 +21,4 @@ export function TBDPage({ page }: ITBDPage) {
             </Link>
         </div>
     );
-};
+}

@@ -5,5 +5,5 @@ export function FlappyBird() {
     return (
         <TBDPage page="Flappy Bird" />
     );
-};
+}
 

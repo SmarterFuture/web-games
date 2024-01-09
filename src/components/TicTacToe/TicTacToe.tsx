@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Slider, Button, Dialog, DialogTitle, DialogActions, Typography } from "@mui/material";
+import { Slider, Button, Dialog, DialogTitle, DialogActions } from "@mui/material";
 import { Scene } from "./Scene";
 import { Player } from "./constants";
 import {MyDoc} from "../custom";

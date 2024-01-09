@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { ITile, Size, Player, History, MenuProps } from "./constants";
 import { validateTicTacToe } from "./utils";
 import { SelectChangeEvent, MenuItem, FormControl, InputLabel, Select, Button } from "@mui/material";
@@ -82,7 +82,7 @@ export function Scene({ side, endHandler }: Size) {
     for (let y = 0; y < side; y++) {
         let cols: Array<React.JSX.Element> = [];
         for (let x = 0; x < side; x++) {
-            const pos = y * side + x
+            const pos = y * side + x
             cols.push(
                 <Tile key={x} value={ tiles[pos] || "" } onClick={() => playerTurn(pos)}/>
             );
@@ -118,7 +118,7 @@ export function Scene({ side, endHandler }: Size) {
                         className="historyList"
                         labelId="history-in"
                         label="History"
-                        value={ !!historyButtons.length ? selected.toString() : '' }
+                        value={ historyButtons.length ? selected.toString() : '' }
                         onChange={ jumpTo }
                         MenuProps={ MenuProps }
                     >

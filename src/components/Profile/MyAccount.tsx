@@ -5,5 +5,5 @@ export function MyAccount() {
     return (
         <TBDPage page="My Account" />
     );
-};
+}
 

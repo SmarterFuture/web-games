@@ -1,6 +1,4 @@
-import { Typography, Link } from "@mui/material";
-import { Container } from "@mui/system";
-import { styled } from '@mui/material/styles';
+import { Typography, Container } from "@mui/material";
 
 
 export function About() {

@@ -4,7 +4,7 @@ import { IDir, Dir, SnakeSegment } from "./constants";
 
  export class Player {
     body: Array<SnakeSegment>;
-    board: Board
+    board: Board;
     score: number = 2;
     dir: IDir = Dir.Right;
     constructor (board: Board) {
@@ -12,7 +12,7 @@ import { IDir, Dir, SnakeSegment } from "./constants";
 
         const head: SnakeSegment = { ...this.board.center(), dir: this.dir._state };
         const tail: SnakeSegment = { x: head.x, y: head.y + 1, dir: this.dir._state };
-        this.body = [head, tail]
+        this.body = [head, tail];
 
         this.board.nextFood();        
     }
@@ -35,12 +35,12 @@ import { IDir, Dir, SnakeSegment } from "./constants";
             this.tailoff();
         }
         this.board.changeState(newHead.x, newHead.y, true);
-        return false
+        return false;
     }
     change_dir(dir: IDir) {
         const currDir = this.body[1].dir;
         if ( currDir === dir._state || ( currDir + 2 ) % 4 === dir._state ) {
-            return
+            return;
         }
         this.dir = dir;
         this.body[0].dir = dir._state;
@@ -52,7 +52,7 @@ import { IDir, Dir, SnakeSegment } from "./constants";
     private has_died(head: SnakeSegment) {
         for (let i = 4; i < this.body.length; i++ ) {
             const part = this.body[i];
-            if ( head.x === part.x && head.y === part.y ) {
+            if ( head.x === part.x && head.y === part.y ) {
                 return true;
             }
         }
@@ -60,9 +60,9 @@ import { IDir, Dir, SnakeSegment } from "./constants";
             || head.x > this.board.width
             || head.y < 0
             || head.y > this.board.height ) {
-            return true
+            return true;
         }
-        return false
+        return false;
     }
 }
 

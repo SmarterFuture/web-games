@@ -1,4 +1,4 @@
-import assets from "../../shared/assets.json";
+import assets from "../../shared/assets.json";
 const banners = assets.banners;
 
 

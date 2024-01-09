@@ -1,8 +1,7 @@
 import { InfoOutlined } from "@mui/icons-material"
 import { MyIconButton } from "./MyIconButton"
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Typography } from "@mui/material";
-import { useState } from "react";
-import { Container } from "@mui/system";
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Typography, Container } from "@mui/material";
+import { useState, JSX } from "react";
 
 
 interface MyDocProps {

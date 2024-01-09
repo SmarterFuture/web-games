@@ -10,7 +10,7 @@ export function Snake() {
     const [dialog, setDialog] = useState<number | null>(null);
 
     function handleChange(_: Event, newValue: number | number[]) {
-        const newSpeed: number = 210 - (newValue as number) * 10
+        const newSpeed: number = 210 - (newValue as number) * 10
         setSpeed(newSpeed);
         setKey(!key);
     }
@@ -54,7 +54,7 @@ export function Snake() {
                     onClose={ closeDialog }
                 >
                     <DialogTitle>
-                        Congratulations, you've scored { dialog } points!
+                        Congratulations, you have scored { dialog || 0 } points!
                     </DialogTitle>
                     <DialogActions>
                         <Button onClick={() => { closeDialog(); handleReset(); }}> New Game </Button>
