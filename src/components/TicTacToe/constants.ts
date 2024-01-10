@@ -1,5 +1,7 @@
 import { MouseEventHandler } from "react";
 
+
+// eslint-disable-next-line no-shadow
 export enum Player {
     X = "X",
     O = "O"
@@ -42,7 +44,7 @@ export class Streak {
             this.len = 1;
             this._char = txt;
         }
-        if ( this.len >= this._target && this._char !== undefined ) {
+        if ( this.len >= this._target && this._char !== undefined ) {
             return true;
         }
         return false;
@@ -55,5 +57,5 @@ export const MenuProps = {
         maxHeight: "10em"
         }
     }
-}
+};
 

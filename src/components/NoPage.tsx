@@ -1,13 +1,18 @@
+import { BrowserNotSupported } from "@mui/icons-material";
+import { Typography, Link} from "@mui/material";
 
 
-function Profil() {
+export function NoPage() {
     return (
         <div className="center_mid">
-            <div>
-                This page does not exists
-            </div>
+            <BrowserNotSupported sx={{fontSize: "5em"}}/>
+            <Typography variant="body1">
+                This page does not exist
+            </Typography>
+            <Link href="/games">
+                Return to game library
+            </Link>
         </div>
     );
-};
+}
 
-export default Profil;

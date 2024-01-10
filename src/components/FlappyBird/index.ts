@@ -1,1 +1,1 @@
-export { default as FlappyBird } from "./FlappyBird";
+export { FlappyBird } from "./FlappyBird";

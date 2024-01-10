@@ -18,7 +18,7 @@ export const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
     padding: 0,
     textAlign: 'center',
-    color: theme.palette.text.secondary,
+    color: theme.palette.text.secondary
 }));
 
 export const CONROLS_STYLE_SMALL = {
@@ -27,5 +27,5 @@ export const CONROLS_STYLE_SMALL = {
     height: "10em",
     aspectRatio: "1 / 1",
     mt: "1em"
-}
+};
 

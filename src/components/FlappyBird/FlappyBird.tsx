@@ -1,13 +1,9 @@
+import {TBDPage} from "../custom";
 
 
-function FlappyBird() {
+export function FlappyBird() {
     return (
-        <div className="center_mid">
-            <div>
-                This is Flappy Bird page.
-            </div>
-        </div>
+        <TBDPage page="Flappy Bird" />
     );
-};
+}
 
-export default FlappyBird;

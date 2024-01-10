@@ -8,9 +8,9 @@ export const ImageButton = styled(ButtonBase)(() => ({
   "&:hover, &.Mui-focusVisible": {
     zIndex: 1,
     "& .MuiImageBackdrop-root": {
-      opacity: 0.15,
-    },
-  },
+      opacity: 0.15
+    }
+  }
 }));
 
 export const ImageSrc = styled("span")({
@@ -20,7 +20,7 @@ export const ImageSrc = styled("span")({
   top: 0,
   bottom: 0,
   backgroundSize: "cover",
-  backgroundPosition: "center 40%",
+  backgroundPosition: "center 40%"
 });
 
 export const ImageCenter = styled("span")(({ theme }) => ({
@@ -32,7 +32,7 @@ export const ImageCenter = styled("span")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  color: theme.palette.common.white,
+  color: theme.palette.common.white
 }));
 
 export const ImageBackdrop = styled("span")(({ theme }) => ({
@@ -43,6 +43,6 @@ export const ImageBackdrop = styled("span")(({ theme }) => ({
   bottom: 0,
   backgroundColor: theme.palette.common.black,
   opacity: 0.4,
-  transition: theme.transitions.create("opacity"),
+  transition: theme.transitions.create("opacity")
 }));
 

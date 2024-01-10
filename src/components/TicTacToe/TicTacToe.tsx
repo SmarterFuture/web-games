@@ -1,18 +1,18 @@
 import { useState } from "react";
-import { Slider, Button, Dialog, DialogTitle, DialogActions, Typography } from "@mui/material";
+import { Slider, Button, Dialog, DialogTitle, DialogActions } from "@mui/material";
 import { Scene } from "./Scene";
 import { Player } from "./constants";
 import {MyDoc} from "../custom";
 
 
-function TicTacToe() {
+export function TicTacToe() {
     const [size, setSize] = useState<number>(3);
     const [key, setKey] = useState<boolean>(false);
     const [dialog, setDialog] = useState<Player | null>(null);
 
     function handleChange(_: Event, newValue: number | number[]) {
         setSize(newValue as number);
-        setKey(!key)
+        setKey(!key);
     }
     function handleReset() {
         setKey(!key);
@@ -21,7 +21,7 @@ function TicTacToe() {
         setDialog(winner);
     }
     function closeDialog() {
-        setDialog(null)
+        setDialog(null);
     }
     
     return (
@@ -62,7 +62,6 @@ function TicTacToe() {
                 </Dialog>
             </div>
         </>
-    )
+    );
 }
 
-export default TicTacToe;

@@ -1,7 +1,7 @@
-import { HelpOutline } from "@mui/icons-material"
-import { MyIconButton } from "./MyIconButton"
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Typography } from "@mui/material";
-import { useState } from "react";
+import { InfoOutlined } from "@mui/icons-material";
+import { MyIconButton } from "./MyIconButton";
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Typography, Container } from "@mui/material";
+import { useState, JSX } from "react";
 
 
 interface MyDocProps {
@@ -19,16 +19,16 @@ export function MyDoc (props: MyDocProps) {
     }
 
     function closeDialog() {
-        setDialog(false)
+        setDialog(false);
     }
     
     return (
-        <div className="docs">
-            <Typography variant="body2">
+        <Container maxWidth="xl">
+            <Typography component="span" variant="body2">
                 { props.title }
             </Typography>
             <MyIconButton onClick={ openDialog } size="small">
-                <HelpOutline/>
+                <InfoOutlined/>
             </MyIconButton>
             <Dialog
                 open = { dialog }
@@ -38,7 +38,7 @@ export function MyDoc (props: MyDocProps) {
                     { props.dialogHeading } 
                 </DialogTitle>
                 <DialogContent>
-                    <DialogContentText>
+                    <DialogContentText component="span">
                         { props.children }
                     </DialogContentText>
                 </DialogContent>
@@ -48,5 +48,5 @@ export function MyDoc (props: MyDocProps) {
                     </Button>
                 </DialogActions>
             </Dialog>
-        </div>
-    )}
+        </Container>
+    );}

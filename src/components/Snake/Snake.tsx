@@ -4,13 +4,13 @@ import {Button, Dialog, DialogActions, DialogTitle, Slider} from "@mui/material"
 import {MyDoc} from "../custom";
 
 
-function Snake() {
+export function Snake() {
     const [speed, setSpeed] =useState<number>(200);
     const [key, setKey] = useState<boolean>(false);
     const [dialog, setDialog] = useState<number | null>(null);
 
     function handleChange(_: Event, newValue: number | number[]) {
-        const newSpeed: number = 210 - (newValue as number) * 10
+        const newSpeed: number = 210 - (newValue as number) * 10;
         setSpeed(newSpeed);
         setKey(!key);
     }
@@ -38,7 +38,7 @@ function Snake() {
                         or simply <code>w / a / s / d</code> on your keyboard
                     </li>
                     <li>Goal of this game is to get your snake to be as long as possible</li>
-                    <li>Sanke is growing by eating apples randomly placed on the game baord</li>
+                    <li>Snake is growing by eating apples randomly placed on the game board</li>
                 </ul>
             </MyDoc>
             <div className="box">
@@ -54,7 +54,7 @@ function Snake() {
                     onClose={ closeDialog }
                 >
                     <DialogTitle>
-                        Congratulations, you've scored { dialog } points!
+                        Congratulations, you have scored { dialog || 0 } points!
                     </DialogTitle>
                     <DialogActions>
                         <Button onClick={() => { closeDialog(); handleReset(); }}> New Game </Button>
@@ -65,4 +65,3 @@ function Snake() {
     );
 }
 
-export default Snake;

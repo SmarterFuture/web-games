@@ -13,7 +13,7 @@ const FooterBox = styled(Box)(({ theme }) => ({
     background: theme.palette.background.paper
 }));
 
-function Footer() {
+export function Footer() {
     return (
         <FooterBox component={"footer"}>
             <Container maxWidth="xl">
@@ -56,4 +56,3 @@ function Footer() {
         );
 }
 
-export default Footer;

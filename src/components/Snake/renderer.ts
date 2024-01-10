@@ -11,12 +11,12 @@ function bodyType(snakeIn: number, snakeOut: number): number {
 export function renderer(ctx: CanvasRenderingContext2D, player: Player) {
 
     ctx.clearRect(0, 0,
-        (player.board.width + 1) * TILE_SIZE,
-        (player.board.height + 1) * TILE_SIZE
+        (player.board.width + 1) * TILE_SIZE,
+        (player.board.height + 1) * TILE_SIZE
     );
     
     const food: IPos = player.board.food;
-    ctx.drawImage(FOOD, food.x * TILE_SIZE, food.y * TILE_SIZE);
+    ctx.drawImage(FOOD, food.x * TILE_SIZE, food.y * TILE_SIZE);
 
     const body: Array<SnakeSegment> = player.body;
     
@@ -38,7 +38,7 @@ export function renderer(ctx: CanvasRenderingContext2D, player: Player) {
         const pic = new Image();
         pic.src = img.src;
 
-        ctx.drawImage(pic, body[i].x * TILE_SIZE, body[i].y * TILE_SIZE);
+        ctx.drawImage(pic, body[i].x * TILE_SIZE, body[i].y * TILE_SIZE);
     }
     ctx.stroke();
     

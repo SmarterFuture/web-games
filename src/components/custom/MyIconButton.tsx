@@ -1,4 +1,4 @@
-import { IconButton, IconButtonProps } from "@mui/material"
+import { IconButton, IconButtonProps } from "@mui/material";
 
 
 export function MyIconButton (props: IconButtonProps) {
@@ -6,4 +6,4 @@ export function MyIconButton (props: IconButtonProps) {
         <IconButton size="large" color="inherit" { ...props }>
             { props.children }
         </IconButton>
-    )}
+    );}

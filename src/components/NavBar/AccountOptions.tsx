@@ -27,7 +27,7 @@ export function AccountOptions() {
                 anchorEl={accNav}
                     anchorOrigin={{
                     vertical: 'bottom',
-                    horizontal: 'left',
+                    horizontal: 'left'
                 }}
                 keepMounted
                 open={ Boolean(accNav) }
@@ -36,7 +36,7 @@ export function AccountOptions() {
                 { USER_PAGES.map((page) => (
                     <MenuItem
                         key={ page.name }
-                        onClick={ () => { closeAccSetting(); navigate(page.link) }}
+                        onClick={ () => { closeAccSetting(); navigate(page.link); }}
                     >
                         <Typography textAlign={"center"}>
                             { page.name }
