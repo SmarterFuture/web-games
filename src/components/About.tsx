@@ -27,7 +27,7 @@ export function About() {
             <Container maxWidth="lg">
                 <Typography variant="about">
                     I have started developing this page as a project for a computer science class, but it quickly
-                    turned into passion project.
+                    turned into a passion project.
                 </Typography>
                 <Typography variant="about">
                     The goal of this page is to fully explore all the aspects of full stack development using PERN
@@ -58,8 +58,8 @@ export function About() {
                     </Table>
                 </TableContainer>
                 <Typography variant="about" component="p">
-                    Although this page currently does not utilizes any PostgreSQL or Express.js I am diligently
-                    working on this integration. Its implemantation was substantionally delayed due to some
+                    Although this page currently does not utilize any PostgreSQL or Express.js I am diligently
+                    working on this integration. Its implementation was substantially delayed due to some
                     challenges.
                 </Typography>
                 <Typography variant="about">

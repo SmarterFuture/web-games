@@ -11,7 +11,7 @@ export function TBDPage({ page }: ITBDPage) {
         <div className="center_mid">
             <Construction sx={{fontSize: "5em"}}/>
             <Typography variant="body1">
-                This is the { page }
+                This is { page }
             </Typography>
             <Typography variant="body1">
                 This page is currently under construction

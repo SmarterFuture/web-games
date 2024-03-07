@@ -31,14 +31,14 @@ export function Snake() {
         <>
             <MyDoc title="Snake" dialogHeading="Snake game documentation">
                 <ul>
-                    <li>To start or pause game click on play button or simple press <code>p</code></li>
+                    <li>To start or pause the game click on the play button or simply press <code>p</code></li>
                     <li>
                         To navigate click any of the given arrow buttons or press <code>
                             ArrowUp / ArrowLeft / ArrowDown / ArrowRight </code>
                         or simply <code>w / a / s / d</code> on your keyboard
                     </li>
-                    <li>Goal of this game is to get your snake to be as long as possible</li>
-                    <li>Snake is growing by eating apples randomly placed on the game board</li>
+                    <li>The goal of this game is to get your snake to be as long as possible</li>
+                    <li>The snake grows by eating apples randomly placed on the game board</li>
                 </ul>
             </MyDoc>
             <div className="box">
